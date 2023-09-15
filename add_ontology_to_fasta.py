@@ -1,5 +1,13 @@
+#be sure to install necessary libraries:
+#run following code in bash:
+#pip install biopython
+from record_change import record_changes_to_csv
+from get_ontology import get_ontology
+from get_ontology_choice import get_ontology_choice
 from Bio import SeqIO
 import datetime
+import os
+import re
 
 def add_ontology_to_fasta(input_file, ontology_function):
     """
@@ -9,43 +17,52 @@ def add_ontology_to_fasta(input_file, ontology_function):
     :param ontology_function: Function to get ontology based on sequence ID.
     """
     # Determine if user wants a unique ontology for each sequence or a single overall ontology
-    user_choice = ""
-    while user_choice not in ['yes', 'no']:
-        user_choice = input("Do you want to add different ontology to each sequence? (Yes/No): ").strip().lower()
-        if user_choice not in ['yes', 'no']:
-            print("Please enter either 'Yes' or 'No'.")
-    overall_ontology = None
-    
-    if user_choice == 'no':
-        overall_ontology = input("Enter the overall unique ontology for all sequences: ")
-    
+    user_choice, overall_ontology = get_ontology_choice()
+        
     # Create a backup filename with date-time suffix
     base_filename = input_file.rsplit('.', 1)[0]  # Remove the .fasta extension
     current_time = datetime.datetime.now().strftime('%Y%m%d_%H%M%S')
     backup_file = f"{base_filename}_{current_time}.fasta"
     temp_file = f"{base_filename}_{current_time}_temp.fasta"
-    
+
+    # create record for to save to the csv:
+    record_time = datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')
+    change_record = {
+        'Input file name': input_file.split('\\')[-1],
+        'Backup file name': backup_file.split('\\')[-1],
+        'Modify date and time': record_time,
+        'Overall ontology change or not': user_choice,
+        'Changes description': ''
+        }
+    if user_choice == 'no':
+         change_record['Changes description']=f"over all unique change: {overall_ontology}."
+         
     # Read the FASTA file, add ontology annotations and store in a list
     modified_records = []
-    
+
+    # Initialize the flag
+    all_sequences_unmodified = True  
+
     with open(input_file, 'r') as infile:
         for record in SeqIO.parse(infile, 'fasta'):
             ontology_term = get_ontology(record.id, overall_ontology)
 
             # Check if ontology information already exists
-            if ontology_term in record.description:
-                print(f"Warning: fasta ID {record.id} already contain ontology information, so not modified.")
+            if re.search(r'\b' + re.escape(ontology_term) + r'\b', record.description):
+                warning=f"Warning: fasta ID {record.id} already contain ontology information, so not modified."
+                print(warning)
+                warning=f"{record.id} already contained ontology."
                 modified_records.append(record)
-                
+                # Within the loop where records are processed:
+                change_record['Changes description'] += warning              
             else:
-                if record.description.replace(record.id, '').strip().strip('|').strip()=="":
-                    record.description = f"{record.id} | {ontology_term}"
-                else:
-                    record.description = f"{record.id} | {ontology_term} | {record.description.replace(record.id, '').strip().strip('|').strip()}"
+                # We've modified at least one sequence
+                all_sequences_unmodified = False
+                record.description = f"{record.id} | {ontology_term} | {record.description.replace(record.id, '').strip().strip('|').strip()}"
+                change_record['Changes description'] += f"{record.id},{ontology_term}; "
                 modified_records.append(record)
 
-    # Rename the original file to its backup version
-    import os
+    # Rename the original file to its temporaty version
     os.rename(input_file, temp_file)
     
     # Write the modified records back to the original input filename
@@ -55,20 +72,20 @@ def add_ontology_to_fasta(input_file, ontology_function):
     # rename the temp file to the original file
     os.rename(temp_file, backup_file)
 
-def get_ontology(sequence_id, overall_ontology=None):
-    """
-    Get ontology term based on sequence ID. 
+    # After all records are processed:
+    if all_sequences_unmodified:
+        change_record['Changes description'] = 'All sequences NOT changed due to Ontology existing.'
+        
+    # Determine the directory of the input file
+    input_file_dir = os.path.dirname(input_file)
     
-    If overall_ontology is provided, return it directly. 
-    Otherwise, prompt the user for ontology information.
+    # Construct the complete path for the CSV
+    csv_filepath = os.path.join(input_file_dir, 'ontology_changes.csv')
     
-    :param sequence_id: ID of the sequence.
-    :param overall_ontology: If set, this ontology will be returned without prompting the user.
-    :return: Ontology term.
-    """
-    if overall_ontology:
-        return overall_ontology
-    return input(f"Enter ontology for sequence {sequence_id}: ")
+    # store changes to CSV
+    record_changes_to_csv(csv_filepath, change_record)
+    
+
 
 if __name__ == "__main__":
     # Get input from the user
