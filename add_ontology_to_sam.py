@@ -46,7 +46,7 @@ def update_description_with_ontology(description, ontology_term, change_record, 
 def add_ontology_to_sam(input_file, get_ontology_func):
     
     # Get user choice and overall ontology if applicable
-    user_choice, overall_ontology = get_ontology_choice()
+    user_choice, overall_ontology , attribute_ontology= get_ontology_choice()
         
     # Create a backup filename with date-time suffix
     base_filename = input_file.rsplit('.', 1)[0]  # Remove the .fasta extension
