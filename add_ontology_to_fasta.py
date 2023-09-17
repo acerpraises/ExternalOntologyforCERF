@@ -32,7 +32,7 @@ def add_ontology_to_fasta(input_file):
         'Backup file name': backup_file.split('\\')[-1],
         'Modify date and time': record_time,
         'Overall ontology change or not': user_choice,
-        'Changes description': 'attribute_ontology;'
+        'Changes description': f'{attribute_ontology};'
         }
     if user_choice == 'no':
          change_record['Changes description']=f"over all unique change: {overall_ontology}."
@@ -45,8 +45,10 @@ def add_ontology_to_fasta(input_file):
 
     with open(input_file, 'r') as infile:
         for record in SeqIO.parse(infile, 'fasta'):
-            ontology_term = get_ontology(record.id, overall_ontology)
-
+            if user_choice == 'yes':
+                ontology_term = get_ontology(record.id, overall_ontology=overall_ontology)
+            else:
+                ontology_term = overall_ontology
             # Check if ontology information already exists
             if re.search(r'\b' + re.escape(ontology_term) + r'\b', record.description):
                 warning=f"Warning: fasta ID {record.id} already contain ontology information, so not modified."

@@ -1,0 +1,4 @@
+Input file name,Backup file name,Modify date and time,Overall ontology change or not,Changes description
+seq.fasta,seq_20230917_075355.fasta,2023-09-17 07:53:55,yes,"attribute_ontology; by21f03.y1|BF727444,GO:0001; by05e12.y1|BF726365,GO:0002; by09f05.y1|BF726635,GO:0003; by14f12.y1|BF726960,GO:0004; by20g06.y1|BF727389,GO:0005; by18g06.y1|BF727241,GO:0006;"
+toy.sam,toy_20230917_083712.sam,2023-09-17 08:37:12,no,"over all unique change: GO:0001.r001,GO:0002;r002,GO:0003.r003,GO:0004.r004,GO:0005.r003,GO:0006.r001,GO:0007.x1,GO:0008.x2,GO:0009.x3,GO:00010.x4,GO:00011.x5,GO:00011.x6,GO:00011."
+toy.sam,toy_20230917_084914.sam,2023-09-17 08:49:14,no,"over all unique change: GO:0001.r001,GO:0001r002,GO:0001r003,GO:0001r004,GO:0001r003,GO:0001r001,GO:0001x1,GO:0001x2,GO:0001x3,GO:0001x4,GO:0001x5,GO:0001x6,GO:0001"

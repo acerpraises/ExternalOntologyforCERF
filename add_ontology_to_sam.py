@@ -31,7 +31,7 @@ def update_description_with_ontology(description, ontology_term, change_record, 
     all_sequences_unmodified=False
     if "OT:Z:" in description:
         # Extract the OT:Z: portion and add the new ontology term
-        change_record['Changes description'] += f"{record_Id},{ontology_term}"
+        change_record['Changes description'] += f"{record_Id},{ontology_term};"
         parts = description.split(";")
         for index, part in enumerate(parts):
             if part.startswith("OT:Z:"):
@@ -99,7 +99,7 @@ def add_ontology_to_sam(input_file, get_ontology_func):
                             header = f'@HD'+'\t'+'CO:Ontology different in each read'
                         else:
                         # User wants one ontology for all reads
-                            header = f'@HD'+'\t'+'CO:Overall Ontology is {overall_ontology}'
+                            header = '@HD'+'\t'+f'CO:Overall Ontology is {overall_ontology}'
                         outfile.write(header + '\n')
                 outfile.write('\t'.join(headers) + '\n') 
             else:
@@ -109,12 +109,16 @@ def add_ontology_to_sam(input_file, get_ontology_func):
                         header = f'@HD'+'\t'+'CO:Ontology different in each read'
                     else:
                         # User wants one ontology for all reads
-                        header = f'@HD'+'\t'+'CO:Overall Ontology is {overall_ontology}'
+                        header = '@HD'+'\t'+f'CO:Overall Ontology is {overall_ontology}'
                     outfile.write(header + '\n')
                 # SAM record line
                 fields = line.strip().split('\t')
                 read_name = fields[0]
-                ontology_term_to_add=get_ontology(read_name, overall_ontology)
+                if user_choice=='yes':
+                    ontology_term_to_add=get_ontology(read_name, overall_ontology=overall_ontology)
+                else:
+                    ontology_term_to_add=overall_ontology
+                    
                 if len(fields)==11:
                     outfile.write('\t'.join(fields) +'\t'+f'OT:Z:{ontology_term_to_add}' +'\n')
                     change_record['Changes description'] += f"{read_name},{ontology_term_to_add}."

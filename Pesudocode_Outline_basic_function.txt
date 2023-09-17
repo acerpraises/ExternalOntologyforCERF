@@ -10,7 +10,10 @@ some example code: add_ontology_to_fasta.py
 If we have a large number of sequences and need to map many of them to ontology terms, it might be more efficient to preload a dictionary of sequence identifiers to ontology terms rather than making a lookup for each sequence.(related to Ontology function)
 
 2. SAM(https://samtools.github.io/hts-specs/SAMv1.pdf)
-SAM (Sequence Alignment/Map) Headers contain @CO lines, which are free-form comment lines. We could use these lines to store ontology data relevant to the entire dataset or experiment.
+Headers lines start with @HD is the only line contain Meta-Data for the file, we can add the value to "CO:" tag represent the Ontology term. 
+
+Another approach is to put Ontology information in @CO line, which are free-form comment lines. We could use these lines to store ontology data relevant to the entire dataset or experiment.
+
 If our ontology data pertains to individual reads/alignments, we’ll need to consider the TAGs in the alignment section. SAM format supports optional fields in the alignment section where we can define custom tags.
 
 3. BAM (Not done yet)
