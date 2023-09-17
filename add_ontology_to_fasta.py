@@ -9,7 +9,7 @@ import datetime
 import os
 import re
 
-def add_ontology_to_fasta(input_file, ontology_function):
+def add_ontology_to_fasta(input_file):
     """
     Modify FASTA file to add ontology annotations.
     
@@ -17,7 +17,7 @@ def add_ontology_to_fasta(input_file, ontology_function):
     :param ontology_function: Function to get ontology based on sequence ID.
     """
     # Determine if user wants a unique ontology for each sequence or a single overall ontology
-    user_choice, overall_ontology = get_ontology_choice()
+    user_choice, overall_ontology , attribute_ontology= get_ontology_choice()
         
     # Create a backup filename with date-time suffix
     base_filename = input_file.rsplit('.', 1)[0]  # Remove the .fasta extension
@@ -32,7 +32,7 @@ def add_ontology_to_fasta(input_file, ontology_function):
         'Backup file name': backup_file.split('\\')[-1],
         'Modify date and time': record_time,
         'Overall ontology change or not': user_choice,
-        'Changes description': ''
+        'Changes description': 'attribute_ontology;'
         }
     if user_choice == 'no':
          change_record['Changes description']=f"over all unique change: {overall_ontology}."
@@ -51,7 +51,7 @@ def add_ontology_to_fasta(input_file, ontology_function):
             if re.search(r'\b' + re.escape(ontology_term) + r'\b', record.description):
                 warning=f"Warning: fasta ID {record.id} already contain ontology information, so not modified."
                 print(warning)
-                warning=f"{record.id} already contained ontology."
+                warning=f"{record.id}, {ontology_term} already contained."
                 modified_records.append(record)
                 # Within the loop where records are processed:
                 change_record['Changes description'] += warning              
@@ -59,7 +59,7 @@ def add_ontology_to_fasta(input_file, ontology_function):
                 # We've modified at least one sequence
                 all_sequences_unmodified = False
                 record.description = f"{record.id} | {ontology_term} | {record.description.replace(record.id, '').strip().strip('|').strip()}"
-                change_record['Changes description'] += f"{record.id},{ontology_term}; "
+                change_record['Changes description'] += f" {record.id},{ontology_term};"
                 modified_records.append(record)
 
     # Rename the original file to its temporaty version
@@ -92,5 +92,5 @@ if __name__ == "__main__":
     input_path = input("Please enter the path and name of the input FASTA file: ")
     
     # Add ontology to the input file and save backup
-    add_ontology_to_fasta(input_path, get_ontology)
+    add_ontology_to_fasta(input_path)
     print(f"File modified and a backup has been saved with a date-time suffix.")

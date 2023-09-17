@@ -12,11 +12,12 @@ If we have a large number of sequences and need to map many of them to ontology 
 2. SAM(https://samtools.github.io/hts-specs/SAMv1.pdf)
 SAM (Sequence Alignment/Map) Headers contain @CO lines, which are free-form comment lines. We could use these lines to store ontology data relevant to the entire dataset or experiment.
 If our ontology data pertains to individual reads/alignments, we’ll need to consider the TAGs in the alignment section. SAM format supports optional fields in the alignment section where we can define custom tags.
-3. BAM
+
+3. BAM (Not done yet)
 BAM need to convert to SAM and then use the function of SAM
 
 4. GFF
-a. GTF
+a. GTF (Not done yet)
   The GTF (Gene Transfer Format) file format is used to describe gene features, such as exons, introns, and UTR regions. The ninth column (attributes column) is particularly flexible and used for tagging a variety of metadata. This attributes column consists of tag "value" pairs and is a suitable place to add ontology terms.
 
 1. Choose a Tag for Ontology:
@@ -30,10 +31,13 @@ You can use Python to parse and modify the GTF file: add_ontology_to_gtf.py
 b. GFF3
 the GFF3 format allows for headers (lines that start with ##), which are primarily used to convey meta-information about the content or to provide a reference to the sequence data. The standard GFF3 headers include directives like ##gff-version, ##sequence-region, and ##FASTA.
 1. Define the Header Structure:
-You'll want to choose a descriptive header prefix. For example, you could use ##ontology followed by relevant information. This will ensure clarity for those examining the file.
+After checking the gff3.md, I choose a header ##attributes-ontology usually describe the URL of ontology mentioned in attributes column.
 
-2. Add to the GFF3 Header with Python: add_ontology_to_gff3_header.py
-5. BED
+2. Add to the GFF3 Header with Python
+
+3. Add the Ontology as OT:Z: in attributes column for each reads/alignments
+
+5. BED(Not done yet)
 The BED (Browser Extensible Data) format is commonly used to define genomic regions and is often used in conjunction with genome browsers like UCSC's Genome Browser. A BED file typically has a minimum of three required columns (chromosome, start, and end), but it can have up to twelve columns, depending on the depth of information you want to provide. Beyond the twelve standard columns, you can add additional custom columns.
 
 1. Extend the BED with Custom Columns:
@@ -66,7 +70,7 @@ The meta-information section can store ontology-related context for the entire V
 The seventh column of a VCF file is the INFO field. This field provides a way to encode structured data. For adding ontology data for specific variants, you can use this field:
 
 First, define a custom INFO field in the meta-information section:
-##INFO=<ID=GO,Number=.,Type=String,Description="Gene Ontology Term">
+##INFO=<ID=OT,Number=.,Type=String,Description="Ontology Term">
 
 Then, in the data lines, you can add the ontology terms:
 #CHROM  POS     ID      REF     ALT     QUAL    FILTER  INFO
@@ -75,6 +79,7 @@ chr2    67890   rs123   T       G       50      PASS    GO=GO:0008270,GO:0006915
 
 3. Python Script to Add Ontology to VCF:
 Here's a basic script to add ontology data to a VCF file's INFO field: add_ontology_to_vcf.py
+
 7. 
 Comments:
 Add a list to recording log, which file input which type of ontology
