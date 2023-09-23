@@ -21,7 +21,7 @@ def main(page: ft.page):
         file_path.update()
 
     #add a function to seach ontology in BioPortal
-    def open_bioportal():
+    def open_bioportal(event): #Aieman -clicking to open BioPortal is an event so we have to let the function accept the one argument
        # Perform a search on BioPortal (you can replace this with your actual search logic)
         bioportal_url = "https://bioportal.bioontology.org"
         webbrowser.open(bioportal_url)
