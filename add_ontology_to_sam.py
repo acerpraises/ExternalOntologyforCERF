@@ -85,12 +85,15 @@ def add_ontology_to_sam(input_file, get_ontology_func):
                 while header_line_Notexist==True:
                     if headers[0]=='@HD':
                         header_line_Notexist=False
+                        
                         if user_choice == 'yes':
                         # User wants different ontology for each read
-                            headers = modify_header(headers, "CO:Ontology different in each read")
+                            if "CO:Ontology different in each read" not in headers:
+                                headers = modify_header(headers, "CO:Ontology different in each read")
                         else:
                         # User wants one ontology for all reads
-                            headers = modify_header(headers, f'CO:Overall Ontology is {overall_ontology}')
+                            if f'CO:Overall Ontology is {overall_ontology}' not in headers:
+                                headers = modify_header(headers, f'CO:Overall Ontology is {overall_ontology}')
                     else:
                         header=['@HD']
                         header_line_Notexist=False

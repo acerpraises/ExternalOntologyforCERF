@@ -1,0 +1,1 @@
+can write the result in a text file and relate that file to the original file in CERF
