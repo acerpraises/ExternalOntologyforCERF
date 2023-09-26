@@ -1,0 +1,85 @@
+id,acronym,name,description,created,parentCategory,@id,@type,@context
+
+
+Imaging
+https://data.bioontology.org/categories/Imaging
+Mouse Anatomy
+https://data.bioontology.org/categories/Mouse_Anatomy
+Ethology
+https://data.bioontology.org/categories/Ethology
+Experimental Conditions
+https://data.bioontology.org/categories/Experimental_Conditions
+Yeast
+https://data.bioontology.org/categories/Yeast
+All Organisms
+https://data.bioontology.org/categories/All_Organisms
+Immunology
+https://data.bioontology.org/categories/Immunology
+Fish Anatomy
+https://data.bioontology.org/categories/Fish_Anatomy
+Cellular anatomy 
+https://data.bioontology.org/categories/Cellular_anatomy_
+Taxonomic Classification
+https://data.bioontology.org/categories/Taxonomic_Classification
+Molecule
+https://data.bioontology.org/categories/Molecule
+Health
+https://data.bioontology.org/categories/Health
+Gross Anatomy
+https://data.bioontology.org/categories/Gross_Anatomy
+Dysfunction
+https://data.bioontology.org/categories/Dysfunction
+Biomedical Resources
+https://data.bioontology.org/categories/Biomedical_Resources
+Genomic and Proteomic
+https://data.bioontology.org/categories/Genomic_and_Proteomic
+Biological Process
+https://data.bioontology.org/categories/Biological_Process
+Other
+https://data.bioontology.org/categories/Other
+Subcellular
+https://data.bioontology.org/categories/Subcellular
+Phenotype
+https://data.bioontology.org/categories/Phenotype
+Human Developmental Anatomy
+https://data.bioontology.org/categories/Human_Developmental_Anatomy
+Plant Anatomy
+https://data.bioontology.org/categories/Plant_Anatomy
+Neurologic Disease
+https://data.bioontology.org/categories/Neurologic_Disease
+Arabidopsis
+https://data.bioontology.org/categories/Arabadopsis
+Neurological Disorder
+https://data.bioontology.org/categories/Neurological_Disorder
+Anatomy
+https://data.bioontology.org/categories/Anatomy
+Plant
+https://data.bioontology.org/categories/Plant
+Human
+https://data.bioontology.org/categories/Human
+Subcellular anatomy
+https://data.bioontology.org/categories/Subcellular_anatomy
+Chemical
+https://data.bioontology.org/categories/Chemical
+Microbial Anatomy
+https://data.bioontology.org/categories/Microbial_Anatomy
+Cell
+https://data.bioontology.org/categories/Cell
+Development
+https://data.bioontology.org/categories/Development
+Protein
+https://data.bioontology.org/categories/Protein
+Animal Gross Anatomy
+https://data.bioontology.org/categories/Animal_Gross_Anatomy
+Gene Product
+https://data.bioontology.org/categories/Gene_Product
+Vocabularies
+https://data.bioontology.org/categories/Vocabularies
+Physicochemical
+https://data.bioontology.org/categories/Physicochemical
+Upper Level Ontology
+https://data.bioontology.org/categories/Upper_Level_Ontology
+Plant Development
+https://data.bioontology.org/categories/Plant_Development
+Animal Development
+https://data.bioontology.org/categories/Animal_Development

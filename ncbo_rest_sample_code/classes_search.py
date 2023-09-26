@@ -24,7 +24,7 @@ for term in terms:
     search_results.append(get_json(REST_URL + "/search?q=" + term)["collection"])
 
 # Open the file for writing
-with open("classes_serach_result.txt", "w", encoding="utf-8") as file:
+with open("classes_search_simple_result.txt", "w", encoding="utf-8") as file:
     # Print the results
     for result in search_results:
-        file.write(",".join(map(str, result)) + "\n")
+        file.write("\n".join(map(str, result)) + "\n")
