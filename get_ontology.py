@@ -17,5 +17,6 @@ def get_ontology(sequence_id, previous_inputs=None, overall_ontology=None):
         
     if overall_ontology:
         return overall_ontology
-    ontology = input(f"Enter ontology for read {sequence_id}: ")
+    #ontology = input(f"Enter ontology for read {sequence_id}: ")
+    ontology="Replace Ontology ID from bioportal here"
     return ontology

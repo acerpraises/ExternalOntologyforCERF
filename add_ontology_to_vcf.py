@@ -45,20 +45,20 @@ def choose_info_id(vcf_file, default_id="OT"):
                         return True
         return False
 
-    chosen_id = input(f"Enter the desired ID for the ontology term (default: {default_id}): ").strip() or default_id
-    
+    #chosen_id = input(f"Enter the desired ID for the ontology term (default: {default_id}): ").strip() or default_id
+    chosen_id="OT"
     while check_info_id_exists(vcf_file, chosen_id):
-        print(f"The ID {chosen_id} is already in use. Please choose a different one.")
-        chosen_id = input(f"Enter the desired ID for the ontology term (default: {default_id}): ").strip() or default_id
-
+        print(f"The ID {chosen_id} is already in use. Use another one named OL.")
+        #chosen_id = input(f"Enter the desired ID for the ontology term (default: {default_id}): ").strip() or default_id
+        chosen_id="OL"
     return chosen_id
     
-def add_ontology_to_vcf(input_file):
+def add_ontology_to_vcf(input_file, user_choice, overall_ontology, attribute_ontology):
     # if other INFO already used ID=OT, ask user to choose another ID for ontology
-    chosen_id = choose_info_id(input_file)
-
+    #chosen_id = choose_info_id(input_file)#desicion not change individual level read
+    chosen_id="OT"
     # Determine if user wants a unique ontology for each sequence or a single overall ontology
-    user_choice, overall_ontology, attribute_ontology = get_ontology_choice()
+    #user_choice, overall_ontology, attribute_ontology = get_ontology_choice()
     
     # Create a backup filename with date-time suffix
     base_filename = input_file.rsplit('.', 1)[0]  # Remove the .vcf extension
@@ -73,14 +73,15 @@ def add_ontology_to_vcf(input_file):
         'Backup file name': backup_file.split('\\')[-1],
         'Modify date and time': record_time,
         'Overall ontology change or not': user_choice,
-        'Changes description': '{attribute_ontology}.'
+        #'Changes description': '{attribute_ontology}.'
+        'Changes description': '{overall_ontology}.'#add overall_ontology to header
         }
 
          
     # Initialize the flag
     all_sequences_unmodified = True
 
-    ontology_header = f'##INFO=<ID={chosen_id},Number=.,Type=String,Description="Ontology term associated with the variant">'
+    ontology_header = f'##INFO=<ID=OT,Number=.,Type=String,Description="Ontology term associated with the variant">'
     header_added = False
     
     with open(input_file, 'r') as fin, open(temp_file, 'w') as fout:
@@ -135,6 +136,7 @@ def add_ontology_to_vcf(input_file):
             read_id = fields[2]
             
             # Get ontology term for the read/variant
+            ontology_term=None
             if user_choice == 'yes':
                 # Here, you'd call the get_ontology() function, something like:
                 # ontology_term = get_ontology(read_id)  

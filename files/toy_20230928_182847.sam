@@ -1,4 +1,4 @@
-@HD	CO:Overall Ontology is {overall_ontology}	CO:Overall Ontology is GO:0001	CO:Overall Ontology is TEST123
+@HD	CO:Overall Ontology is {overall_ontology}	CO:Overall Ontology is GO:0001
 @SQ	SN:ref	LN:45
 @SQ	SN:ref2	LN:40
 r001	163	ref	7	30	8M4I4M1D3M	=	37	39	TTAGATAAAGAGGATACTG	*	XX:B:S,12561,2,20,112;OT:Z: GO:0002, GO:0001

@@ -22,9 +22,9 @@ def get_ontology_choice():
 
     return user_choice, overall_ontology, attribute_ontology
 	
-def add_ontology_to_gff3(input_file):
+def add_ontology_to_gff3(input_file, user_choice, overall_ontology, attribute_ontology):
     # Determine if user wants a unique ontology for each sequence or a single overall ontology
-    user_choice, overall_ontology, attribute_ontology = get_ontology_choice()
+    #user_choice, overall_ontology, attribute_ontology = get_ontology_choice()
     
      # Create a backup filename with date-time suffix
     base_filename = input_file.rsplit('.', 1)[0]  # Remove the .gff3 extension
@@ -39,7 +39,8 @@ def add_ontology_to_gff3(input_file):
         'Backup file name': backup_file.split('\\')[-1],
         'Modify date and time': record_time,
         'Overall ontology change or not': user_choice,
-        'Changes description': '{attribute_ontology}.'
+        #'Changes description': '{attribute_ontology}.'
+        'Changes description': '{overall_ontology}.'
         }
     if user_choice == 'no':
          change_record['Changes description']+=f"over all unique change: {overall_ontology}."
@@ -60,9 +61,10 @@ def add_ontology_to_gff3(input_file):
                 if attribute_ontology not in line:
                     # Append the provided attribute_ontology to it
                     if user_choice == 'no':
-                        line = line.strip() + "; " + attribute_ontology +";"+overall_ontology+"\n"
-                    else:
-                        line = line.strip() + "; " + attribute_ontology +"\n"
+                        #line = line.strip() + "; " + attribute_ontology +";"+overall_ontology+"\n"
+                        line = line.strip() + "; " +overall_ontology+"\n"
+                    #else:
+                    #    line = line.strip() + "; " + attribute_ontology +"\n"
                 attribute_ontology_added = True
                 attribute_ontology_exist=True
                 
@@ -76,9 +78,10 @@ def add_ontology_to_gff3(input_file):
             #add a ##attribute-ontology line if not exist
             if attribute_ontology_exist==False:
                 if user_choice == 'no':
-                    outfile.write("##attribute-ontology"+":"+overall_ontology+";"+ attribute_ontology+"\n")
-                else:
-                    outfile.write("##attribute-ontology:"+ attribute_ontology+"\n")
+                    #outfile.write("##attribute-ontology"+":"+overall_ontology+";"+ attribute_ontology+"\n")
+                    outfile.write("##attribute-ontology"+":"+overall_ontology+"\n")
+                #else:
+                    #outfile.write("##attribute-ontology:"+ attribute_ontology+"\n")
                 attribute_ontology_exist=True
             
             fields = line.strip().split('\t')
@@ -115,7 +118,7 @@ def add_ontology_to_gff3(input_file):
             elif (ontology_term in fields[1] or ontology_term in fields[2]) and not any(a.startswith("Ontology_term=") for a in attributes_fields):
                 ontology_term_found=True
             else:
-                
+                '''
                 for i, attributes_element in enumerate(attributes_fields):
                     if attributes_element.startswith("Ontology_term="):
                         ontology_values = attributes_element.split("=")[1].split(" ")  # Assuming ' ' is a delimiter within attribute values
@@ -134,6 +137,7 @@ def add_ontology_to_gff3(input_file):
                             #print(attributes_element)
                             break
                 #print(attributes_fields)
+                '''
                 '''            
                 # In case the ontology term was not found after any "Ontology_term=" instance
                 if not ontology_term_found:

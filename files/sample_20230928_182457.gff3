@@ -1,0 +1,110 @@
+##gff-version 3
+##sequence-region I 1 15072434
+##sequence-region II 1 15279421
+##sequence-region III 1 13783801
+##sequence-region IV 1 17493829
+##sequence-region V 1 20924180
+##sequence-region X 1 17718942
+##sequence-region MtDNA 1 13794
+I	BLAT_EST_OTHER	expressed_sequence_match	1	8	5	-	.	ID=MM454_contig01242.18;Target=MM454_contig01242 170 177 +
+I	BLAT_EST_OTHER	expressed_sequence_match	15	66	5	-	.	ID=MM454_contig01242.18;Target=MM454_contig01242 118 169 +
+I	BLAT_EST_OTHER	expressed_sequence_match	1	46	14.5	-	.	ID=MM454_contig04450.8;Target=MM454_contig04450 135 180 +
+I	BLAT_EST_OTHER	expressed_sequence_match	1	50	12.8	-	.	ID=yk585b5.5.6;Target=yk585b5.5 119 168 +
+I	inverted	inverted_repeat	1	212	66	.	.	Note=loop 426
+I	Genbank	assembly_component	1	2679	.	+	.	genbank=FO080985
+I	Genomic_canonical	assembly_component	1	2679	.	+	.	Name=cTel33B;Note=Clone:cTel33B,Genbank=FO080985
+I	PCoF_Variation_project_Polymorphism	sequence_alteration	1	11000	.	+	.	variation=WBVar02123961;public_name=WBVar02123961;other_name=cewivar00854884;strain=JU533;polymorphism=1;consequence=Coding_exon
+I	Variation_project_Polymorphism	sequence_alteration	1	11000	.	+	.	variation=WBVar02123961;public_name=WBVar02123961;other_name=cewivar00854884;strain=JU533;polymorphism=1;consequence=Coding_exon
+I	interpolated_pmap_position	gene	1	559768	.	.	.	ID=gmap:spe-13;gmap=spe-13;status=uncloned;Note=-21.3602 cM (+/- 1.84 cM)
+I	Balanced_by_balancer	biological_region	1	5263426	.	.	.	balancer=Rearrangement:hT3;balancer_type=Translocation;Note=Summary: Translocation (rigorous proof of reciprocity lacking)%2C moderately well characterized%2C very stable. Very effective balancer for left portion of LG I from left end to around let-363%2C and the right portion of LG X from the right end to between dpy-7 and unc-3. hT3(I)%2C which disjoins from normal LG I%2C is probably LG X (right) translocated to LG I (right). hT3(X)%2Cwhich disjoins from normal LG X%2C is probably LG I (left) translocated to LG X (left).,Growth characteristics: Original isolate marked with dpy-5 and unc-29. Homozygous inviable%2C probably breaks in let-363 (I). Heterozygotes exhibit reduced viability%2C low level of X chromosome nondisjunction (1.2%).,Handling: Easy to manipulate. Rare exceptional progeny carry one half-translocation as a free duplication. Recombination frequency in unbalanced intervals increased on both LG I and LG X.,Recommended use: General balancing%2C strain maintenance
+I	Link	assembly_component	1	7002897	.	+	.	Name=SUPERLINK_RW1
+I	Balanced_by_balancer	biological_region	1	7383197	.	.	.	balancer=Rearrangement:sDp2;balancer_type=Duplication;Note=Summary: Free duplication%2C well characterized%2C does not recombine with normal homologues. Very effective balancer for the left portion of LG I from the left end through unc-15 (just left of unc-13).,Handling: sDp2-bearing males mate and give some progeny%2C but are slow growing and do not compete well with non-Dp males in mating.,Recommended use: General balancing%2C strain maintenance%2C mutant screens.
+I	Balanced_by_balancer	biological_region	1	7454088	.	.	.	balancer=Rearrangement:szDp1;balancer_type=Duplication;Note=Summary: Complex free duplication%2C well characterized%2C does not recombine with normal LG I. Very effective balancer for the left portion of LG I from the left end through unc-13. Consists of one half-translocation [szT1(X)] from szT1 maintained in addition to a normal chromosome complement.,Growth characteristics: Animals carrying two copies of szDp1 apparently inviable. Duplication strains give rise to spontaneous males through meiotic nondisjunction of the X chromosome.,Handling: szDp1-bearing males either do not mate or are infertile.,Recommended use:
+I	Balanced_by_balancer	biological_region	1	7454088	.	.	.	balancer=Rearrangement:szT1;balancer_type=Translocation;Note=Summary: Reciprocal translocation%2C well characterized%2C very stable. Effective balancer for left portion of LG I through unc-13%2C nearly all of LG X from right end to around dpy-3. szT1(I) is large segment of LG X (right) translocated to LG I%2C disjoins from normal LG I. szT1(X) is LG I (left) translocated to fragment of LG X (left)%2C disjoins from normal LG X.,Handling: Easy to manipulate. Lon-2 szT1 males mate well. Rare exceptional progeny carry one half-translocation as a complex free duplication. Gives rise spontaneously to rare apparent lethal mutations that may represent fusion of szT1(X) and the normal X. Shows threefold enhanced recombination frequency immediately adjacent to right of LG I breakpoint and about twofold enhanced frequency in the unc-101 - unc-54 interval.,Recommended use: General balancing%2C strain construction%2C strain maintenance.
+I	Balanced_by_balancer	biological_region	1	8244546	.	.	.	balancer=Rearrangement:hT1;balancer_type=Translocation;Note=Summary: Reciprocal translocation%2C well characterized%2C very stable. Very effective balancer for left portion of LG I from the left end through let-80%2C and the left portion of LG V from the left end through dpy-11. hT1(I) is LG V (left) translocated to LG I (right)%2C disjoins from normal LG I. hT1(V) is LG I (left) translocated to LG V (right)%2C disjoins from normal LG V.,Growth characteristics: Homozygous inviable%2C cause unknown. Arrests at L3. Brood size in heterozygotes ~75. Easy to manipulate. Heterozygous males mate well. Rare exceptional progeny carry one half-translocation as a complex free duplication. Recombination frequency in the unbalanced unc-101 - unc-54 interval on LG I is increased twofold.,Handling: Easy to manipulate. Heterozygous males mate well. Rare exceptional progeny carry one half-translocation as a complex free duplication. Recombination frequency in the unbalanced unc-101 - unc-54 interval on LG I is increased twofold.,Recommended use: General balancing%2C strain maintenance. mutant screens.
+I	Balanced_by_balancer	biological_region	1	12513405	.	.	.	balancer=Rearrangement:hT2;balancer_type=Translocation;Note=Summary: Reciprocal translocation%2C well characterized%2C stable. Effective balancer for left portion of LG I from left end through unc-101%2C and right portion of LG III from right end through dpy-17. hT2(I) is LG III (right) translocated to LG I (right)%2C disjoins from normal LG I. hT2(III) is LG I (left) translocated to LG III (left)%2C disjoins from normal LG III.,Growth characteristics: Original isolate homozygous viable with Bli-4 phenotype.,Handling: Easy to manipulate. Heterozygous males%2C and homozygous males of original isolate%2C mate well. Homozygous Bli-4 phenotype completely suppressed in dpy-5 and dpy-18 variants. Rare exceptional progeny carry one half-translocation as a complex free duplication. Mutations have been observed to become unbalanced at low frequency%2C but the mechanism is not fully understood. The dpy-18(h662) variant is very mildly Dpy as a homozygote. hT2[bli-4(e937) let-?(q782) qIs48] carries an integrated pharyngeal GFP element%3B the lethal mutation in this variant has been observed to recombine away%2C leaving hT2[bli-4(e937) qIs48] that apparently retains balancer activity.,Recommended use: General balancing%2C strain maintenance.
+I	Link	assembly_component	1	15072434	.	+	.	Name=CHROMOSOME_I
+I	BLAT_EST_OTHER	expressed_sequence_match	2	69	5.2	+	.	ID=FR830688.26;Target=FR830688 699 766 +
+I	BLAT_EST_OTHER	expressed_sequence_match	5	30	22.9	+	.	ID=MM454_FPK17YK01BXL6V.20;Target=MM454_FPK17YK01BXL6V 170 195 +
+I	BLAT_EST_OTHER	expressed_sequence_match	32	36	22.9	+	.	ID=MM454_FPK17YK01BXL6V.20;Target=MM454_FPK17YK01BXL6V 196 200 +
+I	BLAT_EST_OTHER	expressed_sequence_match	38	73	22.9	+	.	ID=MM454_FPK17YK01BXL6V.20;Target=MM454_FPK17YK01BXL6V 243 278 +
+I	BLAT_EST_OTHER	expressed_sequence_match	10	32	8.5	+	.	ID=MM454_contig00427.6;Target=MM454_contig00427 441 463 +
+I	BLAT_EST_OTHER	expressed_sequence_match	33	55	8.5	+	.	ID=MM454_contig00427.6;Target=MM454_contig00427 488 510 +
+I	BLAT_EST_OTHER	expressed_sequence_match	10	108	33.1	+	.	ID=MM454_contig07242.21;Target=MM454_contig07242 44 142 +
+I	inverted	inverted_repeat	61	242	67	.	.	Note=loop 366
+I	Genbank	assembly_component	61	47689	.	+	.	genbank=FO080986
+I	Genomic_canonical	assembly_component	61	47689	.	+	.	Name=Y74C9A;Note=Clone:Y74C9A,Genbank=FO080986
+I	BLAT_EST_OTHER	expressed_sequence_match	103	110	5.6	-	.	ID=MM454_contig01242.19;Target=MM454_contig01242 182 189 +
+I	BLAT_EST_OTHER	expressed_sequence_match	112	168	5.6	-	.	ID=MM454_contig01242.19;Target=MM454_contig01242 118 174 +
+I	BLAT_EST_OTHER	expressed_sequence_match	158	166	27.8	+	.	ID=MM454_FPK17YK01BXL6V.21;Target=MM454_FPK17YK01BXL6V 149 157 +
+I	BLAT_EST_OTHER	expressed_sequence_match	167	192	27.8	+	.	ID=MM454_FPK17YK01BXL6V.21;Target=MM454_FPK17YK01BXL6V 170 195 +
+I	BLAT_EST_OTHER	expressed_sequence_match	194	196	27.8	+	.	ID=MM454_FPK17YK01BXL6V.21;Target=MM454_FPK17YK01BXL6V 196 198 +
+I	BLAT_EST_OTHER	expressed_sequence_match	197	206	27.8	+	.	ID=MM454_FPK17YK01BXL6V.21;Target=MM454_FPK17YK01BXL6V 234 243 +
+I	BLAT_EST_OTHER	expressed_sequence_match	351	385	27.8	+	.	ID=MM454_FPK17YK01BXL6V.21;Target=MM454_FPK17YK01BXL6V 244 278 +
+I	inverted	inverted_repeat	217	428	66	.	.	Note=loop 426
+I	inverted	inverted_repeat	247	428	67	.	.	Note=loop 366
+I	BLAT_EST_OTHER	expressed_sequence_match	347	360	43.1	-	.	ID=MM454_FPK17YK02N74II.6;Target=MM454_FPK17YK02N74II 161 174 +
+I	BLAT_EST_OTHER	expressed_sequence_match	368	417	43.1	-	.	ID=MM454_FPK17YK02N74II.6;Target=MM454_FPK17YK02N74II 111 160 +
+I	BLAT_EST_OTHER	expressed_sequence_match	418	433	43.1	-	.	ID=MM454_FPK17YK02N74II.6;Target=MM454_FPK17YK02N74II 65 80 +
+I	RNASeq_F_asymmetry	transcript_region	383	402	5	.	.	Note=Region of forward asymmetric RNASeq reads
+I	EMBL_nematode_cDNAs-BLAT	expressed_sequence_match	383	433	8.9	-	.	ID=JI462553.1.124;Target=JI462553.1 148 198 +;species=Onchocerca flexuosa
+I	EMBL_nematode_cDNAs-BLAT	expressed_sequence_match	398	433	37.2	-	.	ID=JI245830.1.89;Target=JI245830.1 156 191 +;species=Ascaris suum
+I	EMBL_nematode_cDNAs-BLAT	expressed_sequence_match	659	742	37.2	-	.	ID=JI245830.1.89;Target=JI245830.1 61 144 +;species=Ascaris suum
+I	RNASeq_F_asymmetry	transcript_region	403	404	9	.	.	Note=Region of forward asymmetric RNASeq reads
+I	RNASeq_R_asymmetry	transcript_region	436	459	22	.	.	Note=Region of reverse asymmetric RNASeq reads
+I	TranscriptionallyActiveRegion	transcribed_fragment	455	600	0.00637799	.	.	Note=modENCODE_3406
+I	TranscriptionallyActiveRegion	transcribed_fragment	455	600	0.0487419	.	.	Note=modENCODE_489
+I	RNASeq_R_asymmetry	transcript_region	460	463	9	.	.	Note=Region of reverse asymmetric RNASeq reads
+I	RNASeq_F_asymmetry	transcript_region	473	484	5	.	.	Note=Region of forward asymmetric RNASeq reads
+I	SAGE_tag	SAGE_tag	476	489	.	+	.	sequence=SAGE:ctaaattcaa;count=1
+I	RNASeq_F_asymmetry	transcript_region	485	493	8	.	.	Note=Region of forward asymmetric RNASeq reads
+I	dust	low_complexity_region	494	503	.	.	.	Note=low_complexity region
+I	Genefinder	CDS	535	883	.	-	1	ID=CDS:Y74C9A.gc1
+I	Genefinder	CDS	2633	2712	.	-	0	ID=CDS:Y74C9A.gc1
+I	Genefinder	CDS	3203	3257	.	-	1	ID=CDS:Y74C9A.gc1
+I	Genefinder	CDS	4264	4358	.	-	0	ID=CDS:Y74C9A.gc1
+I	Genefinder	CDS	5189	5296	.	-	0	ID=CDS:Y74C9A.gc1
+I	Genefinder	CDS	6037	6327	.	-	0	ID=CDS:Y74C9A.gc1
+I	Genefinder	CDS	9727	9846	.	-	0	ID=CDS:Y74C9A.gc1
+I	Genefinder	CDS	10095	10230	.	-	1	ID=CDS:Y74C9A.gc1
+I	Genefinder	CDS	10508	10575	.	-	0	ID=CDS:Y74C9A.gc1
+I	RNASeq_F_asymmetry	transcript_region	539	545	20	.	.	Note=Region of forward asymmetric RNASeq reads
+I	RNASeq_F_asymmetry	transcript_region	546	570	32	.	.	Note=Region of forward asymmetric RNASeq reads
+I	RepeatMasker	repeat_region	563	636	355	+	.	Target=Ce000044 66 1 -
+I	Million_mutation	point_mutation	566	566	.	+	.	variation=WBVar00604243;public_name=gk497391;strain=VC40173;substitution=C/T
+I	RepeatMasker	repeat_region	566	646	321	+	.	Target=RCS5 1387 1307 -
+I	RNASeq_F_asymmetry	transcript_region	571	593	49	.	.	Note=Region of forward asymmetric RNASeq reads
+I	EMBL_nematode_cDNAs-BLAT	expressed_sequence_match	574	726	33.4	-	.	ID=JI214561.1.43;Target=JI214561.1 336 488 +;species=Ascaris suum
+I	EMBL_nematode_cDNAs-BLAT	expressed_sequence_match	727	846	33.4	-	.	ID=JI214561.1.43;Target=JI214561.1 62 181 +;species=Ascaris suum
+I	EMBL_nematode_cDNAs-BLAT	expressed_sequence_match	583	699	60.6	-	.	ID=JI248464.1.99;Target=JI248464.1 115 231 +;species=Ascaris suum
+I	EMBL_nematode_cDNAs-BLAT	expressed_sequence_match	761	841	60.6	-	.	ID=JI248464.1.99;Target=JI248464.1 14 94 +;species=Ascaris suum
+I	RepeatMasker	repeat_region	585	847	1763	+	.	Target=Ce000094 3 265 +
+I	dust	low_complexity_region	587	842	.	.	.	Note=low_complexity region
+I	EMBL_nematode_cDNAs-BLAT	expressed_sequence_match	604	666	5.4	+	.	ID=JI470898.1.113;Target=JI470898.1 1 63 +;species=Onchocerca flexuosa
+I	EMBL_nematode_cDNAs-BLAT	expressed_sequence_match	613	789	34.8	-	.	ID=JI228899.1.69;Target=JI228899.1 13 189 +;species=Ascaris suum
+I	EMBL_nematode_cDNAs-BLAT	expressed_sequence_match	621	809	39.7	+	.	ID=JI231043.1.52;Target=JI231043.1 36 224 +;species=Ascaris suum
+I	RNASeq_F_asymmetry	transcript_region	639	643	64	.	.	Note=Region of forward asymmetric RNASeq reads
+I	RNASeq_F_asymmetry	transcript_region	644	646	99	.	.	Note=Region of forward asymmetric RNASeq reads
+I	Million_mutation	point_mutation	667	667	.	+	.	variation=WBVar00604244;public_name=gk704328;strain=VC40581;substitution=G/A
+I	Variation_project_Polymorphism	deletion	681	698	.	+	.	variation=WBVar02116639;public_name=WBVar02116639;other_name=cewivar00847419;strain=KR314;polymorphism=1
+I	RNASeq_R_asymmetry	transcript_region	691	692	76	.	.	Note=Region of reverse asymmetric RNASeq reads
+I	Million_mutation	point_mutation	722	722	.	+	.	variation=WBVar00323243;public_name=gk100000;strain=VC40072;substitution=C/T
+I	EMBL_nematode_cDNAs-BLAT	expressed_sequence_match	724	786	5.4	+	.	ID=JI470898.1.114;Target=JI470898.1 1 63 +;species=Onchocerca flexuosa
+I	Variation_project_Polymorphism	deletion	747	764	.	+	.	variation=WBVar01947152;public_name=WBVar01947152;other_name=cewivar00668683;strain=CB4854,JU312,JU397;polymorphism=1
+I	RNASeq_F_asymmetry	transcript_region	759	763	63	.	.	Note=Region of forward asymmetric RNASeq reads
+I	Variation_project_Polymorphism	SNP	800	800	.	+	.	variation=WBVar01639822;public_name=WBVar01639822;other_name=cewivar00321824;strain=ED3040,ED3042,ED3049,LKC34;polymorphism=1;substitution=A/C
+I	Million_mutation	point_mutation	801	801	.	+	.	variation=WBVar00604245;public_name=gk724631;strain=VC40617;substitution=C/T
+I	TranscriptionallyActiveRegion	transcribed_fragment	808	956	0.020264	.	.	Note=modENCODE_478
+I	TranscriptionallyActiveRegion	transcribed_fragment	808	956	0.0273679	.	.	Note=modENCODE_486
+I	TranscriptionallyActiveRegion	transcribed_fragment	808	985	0.00934198	.	.	Note=modENCODE_485
+I	TranscriptionallyActiveRegion	transcribed_fragment	808	985	0.0460259	.	.	Note=modENCODE_490
+I	TranscriptionallyActiveRegion	transcribed_fragment	808	1060	0.0313279	.	.	Note=modENCODE_487
+I	RNASeq_R_asymmetry	transcript_region	811	846	83	.	.	Note=Region of reverse asymmetric RNASeq reads
+I	Variation_project_Polymorphism	SNP	830	830	.	+	.	variation=WBVar01782651;public_name=WBVar01782651;other_name=cewivar00483506;strain=JU1401;polymorphism=1;substitution=A/C
+I	Variation_project_Polymorphism	SNP	843	843	.	+	.	variation=WBVar01661485;public_name=WBVar01661485;other_name=cewivar00349477;strain=ED3049;polymorphism=1;substitution=C/T
+I	RepeatMasker	repeat_region	845	1061	1784	+	.	Target=Ce000122 68 284 +
+I	RNASeq_R_asymmetry	transcript_region	847	852	40	.	.	Note=Region of reverse asymmetric RNASeq reads
+I	Variation_project_Polymorphism	SNP	848	848	.	+	.	variation=WBVar01902191;public_name=WBVar01902191;other_name=cewivar00617772;strain=MY1,MY6;polymorphism=1;substitution=A/T
+I	RNASeq_R_asymmetry	transcript_region	853	876	23	.	.	Note=Region of reverse asymmetric RNASeq reads
+I	Variation_project_Polymorphism	SNP	921	921	.	+	.	variation=WBVar01761431;public_name=WBVar01761431;other_name=cewivar00461255;strain=JU1400;polymorphism=1;substitution=G/A
+I	Variation_project_Polymorphism	SNP	939	939	.	+	.	variation=WBVar01761432;public_name=WBVar01761432;other_name=cewivar00461256;strain=JU1400;polymorphism=1;substitution=A/T

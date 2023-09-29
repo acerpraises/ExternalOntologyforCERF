@@ -9,7 +9,7 @@ import datetime
 import os
 import re
 
-def add_ontology_to_fasta(input_file):
+def add_ontology_to_fasta(input_file, user_choice, overall_ontology, attribute_ontology):
     """
     Modify FASTA file to add ontology annotations.
     
@@ -17,7 +17,7 @@ def add_ontology_to_fasta(input_file):
     :param ontology_function: Function to get ontology based on sequence ID.
     """
     # Determine if user wants a unique ontology for each sequence or a single overall ontology
-    user_choice, overall_ontology , attribute_ontology= get_ontology_choice()
+    #user_choice, overall_ontology , attribute_ontology= get_ontology_choice()#since integrated with GUI, let GUI handel this input
         
     # Create a backup filename with date-time suffix
     base_filename = input_file.rsplit('.', 1)[0]  # Remove the .fasta extension
@@ -33,6 +33,7 @@ def add_ontology_to_fasta(input_file):
         'Modify date and time': record_time,
         'Overall ontology change or not': user_choice,
         'Changes description': f'{attribute_ontology};'
+        #need to add another part to record where the ontology file stored
         }
     if user_choice == 'no':
          change_record['Changes description']=f"over all unique change: {overall_ontology}."

@@ -43,10 +43,10 @@ def update_description_with_ontology(description, ontology_term, change_record, 
         change_record['Changes description'] += f"{record_Id},{ontology_term};"
 
     return description, change_record, all_sequences_unmodified
-def add_ontology_to_sam(input_file, get_ontology_func):
+def add_ontology_to_sam(input_file, user_choice, overall_ontology, attribute_ontology):
     
     # Get user choice and overall ontology if applicable
-    user_choice, overall_ontology , attribute_ontology= get_ontology_choice()
+    #user_choice, overall_ontology , attribute_ontology= get_ontology_choice()
         
     # Create a backup filename with date-time suffix
     base_filename = input_file.rsplit('.', 1)[0]  # Remove the .fasta extension
@@ -73,7 +73,7 @@ def add_ontology_to_sam(input_file, get_ontology_func):
     #prepare for header line modifications'
     header_lines = []
     
-    with open(input_path, 'r') as infile, open(temp_file, 'w') as outfile:
+    with open(input_file, 'r') as infile, open(temp_file, 'w') as outfile:
         #create a flag to check if there is a header line
         header_line_Notexist=True
         # Collect header lines
@@ -121,7 +121,7 @@ def add_ontology_to_sam(input_file, get_ontology_func):
                     ontology_term_to_add=get_ontology(read_name, overall_ontology=overall_ontology)
                 else:
                     ontology_term_to_add=overall_ontology
-                    
+                '''    
                 if len(fields)==11:
                     outfile.write('\t'.join(fields) +'\t'+f'OT:Z:{ontology_term_to_add}' +'\n')
                     change_record['Changes description'] += f"{read_name},{ontology_term_to_add}."
@@ -132,6 +132,9 @@ def add_ontology_to_sam(input_file, get_ontology_func):
                     fields[11],change_record,all_sequences_unmodified = update_description_with_ontology(
                         description, ontology_term_to_add, change_record, read_name, all_sequences_unmodified)
                     outfile.write('\t'.join(fields) + '\n')
+                '''
+                #not change individual read
+                outfile.write('\t'.join(fields) + '\n')
     # Rename the original file to its back version
     os.rename(input_file, backup_file)
     
