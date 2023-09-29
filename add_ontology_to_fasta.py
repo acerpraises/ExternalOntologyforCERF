@@ -31,7 +31,7 @@ def add_ontology_to_fasta(input_file, user_choice, overall_ontology, attribute_o
         'Input file name': input_file.split('\\')[-1],
         'Backup file name': backup_file.split('\\')[-1],
         'Modify date and time': record_time,
-        'Overall ontology change or not': user_choice,
+        'Different Ontology in reads or not': user_choice,
         'Changes description': f'{attribute_ontology};'
         #need to add another part to record where the ontology file stored
         }

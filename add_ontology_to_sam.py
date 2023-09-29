@@ -60,7 +60,7 @@ def add_ontology_to_sam(input_file, user_choice, overall_ontology, attribute_ont
         'Input file name': input_file.split('\\')[-1],
         'Backup file name': backup_file.split('\\')[-1],
         'Modify date and time': record_time,
-        'Overall ontology change or not': user_choice,
+        'Different Ontology in reads or not': user_choice,
         'Changes description': ''
         }
     if user_choice == 'no':

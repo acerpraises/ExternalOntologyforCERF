@@ -1,0 +1,48 @@
+{
+    "prefLabel": "Prostate Melanoma",
+    "synonym": [
+        "Prostate Melanoma"
+    ],
+    "definition": [
+        "An exceptionally rare melanoma arising from the prostate gland."
+    ],
+    "obsolete": false,
+    "matchType": "prefLabel",
+    "ontologyType": "ONTOLOGY",
+    "provisional": false,
+    "@id": "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C161611",
+    "@type": "http://www.w3.org/2002/07/owl#Class",
+    "links": {
+        "self": "https://data.bioontology.org/ontologies/NCIT/classes/http%3A%2F%2Fncicb.nci.nih.gov%2Fxml%2Fowl%2FEVS%2FThesaurus.owl%23C161611",
+        "ontology": "https://data.bioontology.org/ontologies/NCIT",
+        "children": "https://data.bioontology.org/ontologies/NCIT/classes/http%3A%2F%2Fncicb.nci.nih.gov%2Fxml%2Fowl%2FEVS%2FThesaurus.owl%23C161611/children",
+        "parents": "https://data.bioontology.org/ontologies/NCIT/classes/http%3A%2F%2Fncicb.nci.nih.gov%2Fxml%2Fowl%2FEVS%2FThesaurus.owl%23C161611/parents",
+        "descendants": "https://data.bioontology.org/ontologies/NCIT/classes/http%3A%2F%2Fncicb.nci.nih.gov%2Fxml%2Fowl%2FEVS%2FThesaurus.owl%23C161611/descendants",
+        "ancestors": "https://data.bioontology.org/ontologies/NCIT/classes/http%3A%2F%2Fncicb.nci.nih.gov%2Fxml%2Fowl%2FEVS%2FThesaurus.owl%23C161611/ancestors",
+        "instances": "https://data.bioontology.org/ontologies/NCIT/classes/http%3A%2F%2Fncicb.nci.nih.gov%2Fxml%2Fowl%2FEVS%2FThesaurus.owl%23C161611/instances",
+        "tree": "https://data.bioontology.org/ontologies/NCIT/classes/http%3A%2F%2Fncicb.nci.nih.gov%2Fxml%2Fowl%2FEVS%2FThesaurus.owl%23C161611/tree",
+        "notes": "https://data.bioontology.org/ontologies/NCIT/classes/http%3A%2F%2Fncicb.nci.nih.gov%2Fxml%2Fowl%2FEVS%2FThesaurus.owl%23C161611/notes",
+        "mappings": "https://data.bioontology.org/ontologies/NCIT/classes/http%3A%2F%2Fncicb.nci.nih.gov%2Fxml%2Fowl%2FEVS%2FThesaurus.owl%23C161611/mappings",
+        "ui": "http://bioportal.bioontology.org/ontologies/NCIT?p=classes&conceptid=http%3A%2F%2Fncicb.nci.nih.gov%2Fxml%2Fowl%2FEVS%2FThesaurus.owl%23C161611",
+        "@context": {
+            "self": "http://www.w3.org/2002/07/owl#Class",
+            "ontology": "http://data.bioontology.org/metadata/Ontology",
+            "children": "http://www.w3.org/2002/07/owl#Class",
+            "parents": "http://www.w3.org/2002/07/owl#Class",
+            "descendants": "http://www.w3.org/2002/07/owl#Class",
+            "ancestors": "http://www.w3.org/2002/07/owl#Class",
+            "instances": "http://data.bioontology.org/metadata/Instance",
+            "tree": "http://www.w3.org/2002/07/owl#Class",
+            "notes": "http://data.bioontology.org/metadata/Note",
+            "mappings": "http://data.bioontology.org/metadata/Mapping",
+            "ui": "http://www.w3.org/2002/07/owl#Class"
+        }
+    },
+    "@context": {
+        "@vocab": "http://data.bioontology.org/metadata/",
+        "prefLabel": "http://data.bioontology.org/metadata/skosprefLabel",
+        "synonym": "http://data.bioontology.org/metadata/skossynonym",
+        "definition": "http://data.bioontology.org/metadata/skosdefinition",
+        "obsolete": "http://data.bioontology.org/metadata/owlobsolete"
+    }
+}

@@ -1,9 +1,3 @@
-Input file name,Backup file name,Modify date and time,Overall ontology change or not,Changes description
-seq.fasta,seq_20230917_075355.fasta,2023-09-17 07:53:55,yes,"attribute_ontology; by21f03.y1|BF727444,GO:0001; by05e12.y1|BF726365,GO:0002; by09f05.y1|BF726635,GO:0003; by14f12.y1|BF726960,GO:0004; by20g06.y1|BF727389,GO:0005; by18g06.y1|BF727241,GO:0006;"
-toy.sam,toy_20230917_083712.sam,2023-09-17 08:37:12,no,"over all unique change: GO:0001.r001,GO:0002;r002,GO:0003.r003,GO:0004.r004,GO:0005.r003,GO:0006.r001,GO:0007.x1,GO:0008.x2,GO:0009.x3,GO:00010.x4,GO:00011.x5,GO:00011.x6,GO:00011."
-toy.sam,toy_20230917_084914.sam,2023-09-17 08:49:14,no,"over all unique change: GO:0001.r001,GO:0001r002,GO:0001r003,GO:0001r004,GO:0001r003,GO:0001r001,GO:0001x1,GO:0001x2,GO:0001x3,GO:0001x4,GO:0001x5,GO:0001x6,GO:0001"
-seq.fasta,seq_20230927_220305.fasta,2023-09-27 22:03:05,no,"over all unique change: test123. by21f03.y1|BF727444,test123; by05e12.y1|BF726365,test123; by09f05.y1|BF726635,test123; by14f12.y1|BF726960,test123; by20g06.y1|BF727389,test123; by18g06.y1|BF727241,test123;"
-seq.fasta,seq_20230927_220528.fasta,2023-09-27 22:05:28,no,All sequences NOT changed due to Ontology existing.
-sample.vcf,sample_20230928_182245.vcf,2023-09-28 18:22:45,no,{overall_ontology}.over all unique change: TEST123.
-sample.gff3,sample_20230928_182457.gff3,2023-09-28 18:24:57,no,{overall_ontology}.over all unique change: TEST123.
-toy.sam,toy_20230928_182847.sam,2023-09-28 18:28:47,no,All sequences NOT changed due to Ontology existing.
+Input file name,Backup file name,Modify date and time,Different Ontology in reads or not,Changes description
+seq.fasta,seq_20230929_110642.fasta,2023-09-29 11:06:42,no,"over all unique change: http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C161611. by21f03.y1|BF727444,http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C161611; by05e12.y1|BF726365,http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C161611; by09f05.y1|BF726635,http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C161611; by14f12.y1|BF726960,http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C161611; by20g06.y1|BF727389,http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C161611; by18g06.y1|BF727241,http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C161611;"
+sample.vcf,sample_20230929_111056.vcf,2023-09-29 11:10:56,no,{overall_ontology}.over all unique change: http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C188067.

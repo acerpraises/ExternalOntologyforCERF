@@ -7,7 +7,7 @@ def record_changes_to_csv(output_filename, change_record):
     :param output_filename: Name of the output CSV file.
     :param change_record: Dictionary containing change details for the current file.
     """
-    fieldnames = ['Input file name', 'Backup file name', 'Modify date and time', 'Overall ontology change or not', 'Changes description']
+    fieldnames = ['Input file name', 'Backup file name', 'Modify date and time', 'Different Ontology in reads or not', 'Changes description']
     
     # Check if file exists to determine whether to write headers
     file_exists = True

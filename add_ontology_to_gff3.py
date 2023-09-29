@@ -38,7 +38,7 @@ def add_ontology_to_gff3(input_file, user_choice, overall_ontology, attribute_on
         'Input file name': input_file.split('\\')[-1],
         'Backup file name': backup_file.split('\\')[-1],
         'Modify date and time': record_time,
-        'Overall ontology change or not': user_choice,
+        'Different Ontology in reads or not': user_choice,
         #'Changes description': '{attribute_ontology}.'
         'Changes description': '{overall_ontology}.'
         }
@@ -58,7 +58,7 @@ def add_ontology_to_gff3(input_file, user_choice, overall_ontology, attribute_on
             # Check if the line starts with ##attribute-ontology
             if line.startswith("##attribute-ontology"):
                 # Check if the provided attribute_ontology already exists in the line
-                if attribute_ontology not in line:
+                if overall_ontology not in line:
                     # Append the provided attribute_ontology to it
                     if user_choice == 'no':
                         #line = line.strip() + "; " + attribute_ontology +";"+overall_ontology+"\n"
