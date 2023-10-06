@@ -3,7 +3,6 @@
 #pip install biopython
 from record_change import record_changes_to_csv
 from get_ontology import get_ontology
-from get_ontology_choice import get_ontology_choice
 from Bio import SeqIO
 import datetime
 import os
