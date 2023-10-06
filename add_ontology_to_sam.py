@@ -6,7 +6,6 @@ import re
 
 from record_change import record_changes_to_csv
 from get_ontology import get_ontology
-from get_ontology_choice import get_ontology_choice
 
 def modify_header(header, ontology_term_to_add):
     # If ontology term not exist in header, add it
