@@ -2,6 +2,7 @@ import urllib.request
 import json
 import os
 import tempfile
+from urllib.parse import quote_plus
 
 REST_URL = "http://data.bioontology.org"
 API_KEY = "87a6e825-e26c-4bd3-9ff8-508eae699720"
@@ -16,8 +17,12 @@ def search_terms_in_ontology(ontology_input, ontology_name, ontology_id):
     print(ontology_id)
     ontology_short = ontology_id.split("/")[-1]
     print(ontology_id)
+    
+    #encoding the string properly before putting it into the URL
+    encoded_search_query = quote_plus(ontology_input)
+
     # Search in the selected ontology
-    full_url = f"{REST_URL}/search?q={ontology_input}&ontologies={ontology_short}&require_exact_match=True"
+    full_url = f"{REST_URL}/search?q={encoded_search_query}&ontologies={ontology_short}&require_exact_match=True"
     print(f"Accessing URL: {full_url}")
     results = get_json(full_url)["collection"]
 

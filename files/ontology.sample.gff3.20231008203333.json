@@ -1,0 +1,48 @@
+{
+    "prefLabel": "NITRITE TEST",
+    "cui": [
+        "C0785110"
+    ],
+    "semanticType": [
+        "T074"
+    ],
+    "obsolete": false,
+    "matchType": "prefLabel",
+    "ontologyType": "ONTOLOGY",
+    "provisional": false,
+    "@id": "http://purl.bioontology.org/ontology/VANDF/4019537",
+    "@type": "http://www.w3.org/2002/07/owl#Class",
+    "links": {
+        "self": "https://data.bioontology.org/ontologies/VANDF/classes/http%3A%2F%2Fpurl.bioontology.org%2Fontology%2FVANDF%2F4019537",
+        "ontology": "https://data.bioontology.org/ontologies/VANDF",
+        "children": "https://data.bioontology.org/ontologies/VANDF/classes/http%3A%2F%2Fpurl.bioontology.org%2Fontology%2FVANDF%2F4019537/children",
+        "parents": "https://data.bioontology.org/ontologies/VANDF/classes/http%3A%2F%2Fpurl.bioontology.org%2Fontology%2FVANDF%2F4019537/parents",
+        "descendants": "https://data.bioontology.org/ontologies/VANDF/classes/http%3A%2F%2Fpurl.bioontology.org%2Fontology%2FVANDF%2F4019537/descendants",
+        "ancestors": "https://data.bioontology.org/ontologies/VANDF/classes/http%3A%2F%2Fpurl.bioontology.org%2Fontology%2FVANDF%2F4019537/ancestors",
+        "instances": "https://data.bioontology.org/ontologies/VANDF/classes/http%3A%2F%2Fpurl.bioontology.org%2Fontology%2FVANDF%2F4019537/instances",
+        "tree": "https://data.bioontology.org/ontologies/VANDF/classes/http%3A%2F%2Fpurl.bioontology.org%2Fontology%2FVANDF%2F4019537/tree",
+        "notes": "https://data.bioontology.org/ontologies/VANDF/classes/http%3A%2F%2Fpurl.bioontology.org%2Fontology%2FVANDF%2F4019537/notes",
+        "mappings": "https://data.bioontology.org/ontologies/VANDF/classes/http%3A%2F%2Fpurl.bioontology.org%2Fontology%2FVANDF%2F4019537/mappings",
+        "ui": "http://bioportal.bioontology.org/ontologies/VANDF?p=classes&conceptid=http%3A%2F%2Fpurl.bioontology.org%2Fontology%2FVANDF%2F4019537",
+        "@context": {
+            "self": "http://www.w3.org/2002/07/owl#Class",
+            "ontology": "http://data.bioontology.org/metadata/Ontology",
+            "children": "http://www.w3.org/2002/07/owl#Class",
+            "parents": "http://www.w3.org/2002/07/owl#Class",
+            "descendants": "http://www.w3.org/2002/07/owl#Class",
+            "ancestors": "http://www.w3.org/2002/07/owl#Class",
+            "instances": "http://data.bioontology.org/metadata/Instance",
+            "tree": "http://www.w3.org/2002/07/owl#Class",
+            "notes": "http://data.bioontology.org/metadata/Note",
+            "mappings": "http://data.bioontology.org/metadata/Mapping",
+            "ui": "http://www.w3.org/2002/07/owl#Class"
+        }
+    },
+    "@context": {
+        "@vocab": "http://data.bioontology.org/metadata/",
+        "prefLabel": "http://data.bioontology.org/metadata/skosprefLabel",
+        "obsolete": "http://data.bioontology.org/metadata/owlobsolete",
+        "semanticType": "http://data.bioontology.org/metadata/umlssemanticType",
+        "cui": "http://data.bioontology.org/metadata/umlscui"
+    }
+}

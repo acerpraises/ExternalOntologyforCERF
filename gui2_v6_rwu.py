@@ -46,6 +46,8 @@ def main(page: ft.page):
         print("Button clicked!")  # Debugging print statement
         if select_file_path:
             print(f"Calling the function for file: {select_file_path}")  # Debugging print statement
+            print(f"You can find a back up file with same file name with date-stamp as suffix")  # Debugging print statement
+            print(f"You can find a back up file with same file name with date-stamp as suffix")  # Debugging print statement
             #if not color_dropdown.value:  # Assuming the dropdown value is None when not selected.
             # Extract the file extension
             selected_file_name = os.path.basename(select_file_path)
@@ -82,6 +84,13 @@ def main(page: ft.page):
                 
                 #original_temp_file_path = os.path.join(os.path.dirname(select_file_path), "temp_filename" + file_extension)
                 os.rename(temp_ontology_file, temp_file_path)
+
+        # Check if ontology_input is empty or None
+        if not ontology_input.value:
+            warning_label.value = "Please enter a value for ontology input."
+            warning_label.visible = True
+            warning_label.update()
+            return
 
     #dropdown menu > we can maybe add Ontology options
     def dropdown_button_clicked(e):
@@ -125,12 +134,19 @@ def main(page: ft.page):
     # Text control to display the description of a selected result
     description_text = ft.Text("", color='black')
     
+    
+
     #Have a button that, when clicked, will update the dropdown options based on the user's input:
     def update_dropdown_options(e):  # Notice the 'e' parameter
         print("Updating dropdown...")  # Debugging statement
         search_text = ontology_search_input.value or ""
         filtered_options = [opt for opt in all_options if opt._Control__attrs['key'][0] and search_text.lower() in opt._Control__attrs['key'][0].lower()]
-        print(f"Filtered options: {filtered_options}")  # Debugging statement
+        if filtered_options:
+            attributes = [attr for attr in dir(filtered_options[0]) if not callable(getattr(filtered_options[0], attr)) and not attr.startswith("__")]
+            print(f"attributes of options {attributes}")  # Debugging statement
+        #print("Filtered options text:", [opt.text for opt in filtered_options])
+        print("The Number of Ontologies foundL:",len(filtered_options))
+        print("The list of Ontology:", [opt.key for opt in filtered_options])
         ontology_dropdown.options = filtered_options
         ontology_dropdown.update()  # Force the dropdown to update its options
 
@@ -176,7 +192,7 @@ def main(page: ft.page):
             print(f"Selected Key: {selected_option_key}")  # Debugging line
 
             # Extracting the description for the selected ontology
-            for label, ontology_id, definitionm, temp_file_path  in results:
+            for label, ontology_id, definition, temp_file_path  in results:
                 print(f"Checking against: {ontology_id}")  # Debugging line
                 if ontology_id == selected_option_key:
                     description = definition or "No definition available."
@@ -184,7 +200,7 @@ def main(page: ft.page):
                     temp_ontology_file=temp_file_path# pass the temp file path to the global variable results_key
                     break
             else:
-                description = "Error: Could not find the selected ontology in the results."
+                description = "Error: Could not find the search term in the selected ontology."
 
             description_text.value = description
             description_text.update()
@@ -199,6 +215,9 @@ def main(page: ft.page):
     
     # Warning text box
     warning_text = ft.Text('', color='red')
+    
+    #When you construct your GUI, add a warning label:
+    warning_label = ft.Text("", visible=False, color="red")
     
     # Container to display ontology results
     results_container = ft.Container()
@@ -264,6 +283,6 @@ def main(page: ft.page):
     buttonRow = ft.Row(controls=[openBioPortalBtn, addOntologyToFileBtn],
                        alignment=ft.MainAxisAlignment.SPACE_BETWEEN)
     
-    page.add(selectFileText,  entriesRow, ontologyBoxText, search_box, ontology_input, ontology_search_input, update_button, ontology_dropdown, submit_btn, warning_text, results_dropdown, description_text, results_container, output_text, buttonRow)
+    page.add(warning_label, selectFileText,  entriesRow, ontologyBoxText, search_box, ontology_input, ontology_search_input, update_button, ontology_dropdown, submit_btn, warning_text, results_dropdown, description_text, results_container, output_text, buttonRow)
 
 ft.app(target=main)

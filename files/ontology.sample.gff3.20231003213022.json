@@ -1,0 +1,54 @@
+{
+    "prefLabel": "Heart",
+    "synonym": [
+        "Heart structure (body structure)",
+        "HEART",
+        "heart",
+        "chambered heart",
+        "vertebrate heart",
+        "Cardiac",
+        "Heart"
+    ],
+    "definition": [
+        "A hollow organ located slightly to the left of the middle portion of the chest. It is composed of muscle and it is divided by a septum into two sides: the right side which receives de-oxygenated blood from the body and the left side which sends newly oxygenated blood to the body. Each side is composed of two chambers: the atrium (receiving blood) and ventricle (ejecting blood)."
+    ],
+    "obsolete": false,
+    "matchType": "prefLabel",
+    "ontologyType": "ONTOLOGY",
+    "provisional": false,
+    "@id": "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C12727",
+    "@type": "http://www.w3.org/2002/07/owl#Class",
+    "links": {
+        "self": "https://data.bioontology.org/ontologies/NCIT/classes/http%3A%2F%2Fncicb.nci.nih.gov%2Fxml%2Fowl%2FEVS%2FThesaurus.owl%23C12727",
+        "ontology": "https://data.bioontology.org/ontologies/NCIT",
+        "children": "https://data.bioontology.org/ontologies/NCIT/classes/http%3A%2F%2Fncicb.nci.nih.gov%2Fxml%2Fowl%2FEVS%2FThesaurus.owl%23C12727/children",
+        "parents": "https://data.bioontology.org/ontologies/NCIT/classes/http%3A%2F%2Fncicb.nci.nih.gov%2Fxml%2Fowl%2FEVS%2FThesaurus.owl%23C12727/parents",
+        "descendants": "https://data.bioontology.org/ontologies/NCIT/classes/http%3A%2F%2Fncicb.nci.nih.gov%2Fxml%2Fowl%2FEVS%2FThesaurus.owl%23C12727/descendants",
+        "ancestors": "https://data.bioontology.org/ontologies/NCIT/classes/http%3A%2F%2Fncicb.nci.nih.gov%2Fxml%2Fowl%2FEVS%2FThesaurus.owl%23C12727/ancestors",
+        "instances": "https://data.bioontology.org/ontologies/NCIT/classes/http%3A%2F%2Fncicb.nci.nih.gov%2Fxml%2Fowl%2FEVS%2FThesaurus.owl%23C12727/instances",
+        "tree": "https://data.bioontology.org/ontologies/NCIT/classes/http%3A%2F%2Fncicb.nci.nih.gov%2Fxml%2Fowl%2FEVS%2FThesaurus.owl%23C12727/tree",
+        "notes": "https://data.bioontology.org/ontologies/NCIT/classes/http%3A%2F%2Fncicb.nci.nih.gov%2Fxml%2Fowl%2FEVS%2FThesaurus.owl%23C12727/notes",
+        "mappings": "https://data.bioontology.org/ontologies/NCIT/classes/http%3A%2F%2Fncicb.nci.nih.gov%2Fxml%2Fowl%2FEVS%2FThesaurus.owl%23C12727/mappings",
+        "ui": "http://bioportal.bioontology.org/ontologies/NCIT?p=classes&conceptid=http%3A%2F%2Fncicb.nci.nih.gov%2Fxml%2Fowl%2FEVS%2FThesaurus.owl%23C12727",
+        "@context": {
+            "self": "http://www.w3.org/2002/07/owl#Class",
+            "ontology": "http://data.bioontology.org/metadata/Ontology",
+            "children": "http://www.w3.org/2002/07/owl#Class",
+            "parents": "http://www.w3.org/2002/07/owl#Class",
+            "descendants": "http://www.w3.org/2002/07/owl#Class",
+            "ancestors": "http://www.w3.org/2002/07/owl#Class",
+            "instances": "http://data.bioontology.org/metadata/Instance",
+            "tree": "http://www.w3.org/2002/07/owl#Class",
+            "notes": "http://data.bioontology.org/metadata/Note",
+            "mappings": "http://data.bioontology.org/metadata/Mapping",
+            "ui": "http://www.w3.org/2002/07/owl#Class"
+        }
+    },
+    "@context": {
+        "@vocab": "http://data.bioontology.org/metadata/",
+        "prefLabel": "http://data.bioontology.org/metadata/skosprefLabel",
+        "synonym": "http://data.bioontology.org/metadata/skossynonym",
+        "definition": "http://data.bioontology.org/metadata/skosdefinition",
+        "obsolete": "http://data.bioontology.org/metadata/owlobsolete"
+    }
+}

@@ -6,7 +6,7 @@
 ##sequence-region V 1 20924180
 ##sequence-region X 1 17718942
 ##sequence-region MtDNA 1 13794
-##attribute-ontology:http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C12727; http://purl.bioontology.org/ontology/VANDF/4019537
+##attribute-ontology:http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C12727
 I	BLAT_EST_OTHER	expressed_sequence_match	1	8	5	-	.	ID=MM454_contig01242.18;Target=MM454_contig01242 170 177 +;Ontology_term=http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C12727
 I	BLAT_EST_OTHER	expressed_sequence_match	15	66	5	-	.	ID=MM454_contig01242.18;Target=MM454_contig01242 118 169 +;Ontology_term=http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C12727
 I	BLAT_EST_OTHER	expressed_sequence_match	1	46	14.5	-	.	ID=MM454_contig04450.8;Target=MM454_contig04450 135 180 +;Ontology_term=http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C12727
