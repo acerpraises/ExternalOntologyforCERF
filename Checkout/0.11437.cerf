@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Resource title="Quickstart.txt">
+<Server name="CERF Demo 5.2.4" url="https://amazon-cerf-eln.info:443"/>
+<Folder path="0.11437"/>
+<MainDocument iconId="391" path="0.11437/cerf.11437.txt" resourceId="11437" size="796" serverFileName="cerf.11437.txt" checkoutId="198" version="2" parentId="10633" md5="StGujaWMwtKDS0kyd7p6yQ=="/></Resource>

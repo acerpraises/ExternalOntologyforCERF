@@ -15,8 +15,9 @@ from add_ontology_to_fasta import add_ontology_to_fasta
 from add_ontology_to_sam import add_ontology_to_sam
 from add_ontology_to_gff3 import add_ontology_to_gff3
 from add_ontology_to_vcf import add_ontology_to_vcf
-from bakcup_file import backup_file
+from backup_file import backup_file
 from ontology_selected_full_file import ontology_selected_full_file
+from get_xml_path_from_selected_file import get_xml_path_from_selected_file
 
 file_path = None
 select_file_path = None
@@ -48,87 +49,111 @@ def main(page: ft.page):
     #select an ontology
     def add_ontoloty_to_file(e):
         print("Button clicked!")  # Debugging print statement
-        if select_file_path:
-            print(f"Calling the function for file: {select_file_path}")  # Debugging print statement
-            print(f"You can find a back up file with same file name with date-stamp as suffix")  # Debugging print statement
-            print(f"You can find a back up file with same file name with date-stamp as suffix")  # Debugging print statement
-            #if not color_dropdown.value:  # Assuming the dropdown value is None when not selected.
-            # Extract the file extension
-            selected_file_name = os.path.basename(select_file_path)
-            file_extension = os.path.splitext(select_file_path)[1].lower()
-            
-            # Get the ontology to add: either the selected one or directly from input
-            if results_key:  # if an ontology was selected from the dropdown
-                ontology_to_add = results_key  # use the @ID
-            else:
-                ontology_to_add = ontology_input.value  # directly use the input value
-
-
-        
-            # Determine which function to call based on file format
-            if file_extension == ".fasta":
-                add_ontology_to_fasta(select_file_path, "no", ontology_to_add , None)
-            elif file_extension == ".sam":
-                add_ontology_to_sam(select_file_path, "no", ontology_to_add , None)
-            elif file_extension == ".gff3":
-                add_ontology_to_gff3(select_file_path, "no", ontology_to_add , None)
-            elif file_extension == ".vcf":
-                add_ontology_to_vcf(select_file_path, "no", ontology_to_add , None)
-            else:
-                print(f"Unsupported file format: {file_extension}")
-
-            # If you processed with search_terms_in_ontology and have a temp file:
-            if results_key:  # only if an ontology was selected
-                ontology_selected_full_file(temp_ontology_file,temp_ontology_file)
-                '''
-                datestamp = datetime.datetime.now().strftime("%Y%m%d%H%M%S")
-                #The root will be everything except the file extension, and ext will be the file extension.
-                root, ext = os.path.splitext(temp_ontology_file )
-                
-                temp_file_name = "ontology." + selected_file_name + "." + datestamp+ext
-                temp_file_path = os.path.join(os.path.dirname(select_file_path), temp_file_name)
-                
-                #original_temp_file_path = os.path.join(os.path.dirname(select_file_path), "temp_filename" + file_extension)
-                os.rename(temp_ontology_file, temp_file_path)
-                '''
         # Check if ontology_input is empty or None
         if not ontology_input.value:
             warning_label.value = "Please enter a value for ontology input."
             warning_label.visible = True
             warning_label.update()
             return
+        else:
+            if select_file_path:
+                print(f"Calling the function for file: {select_file_path}")  # Debugging print statement
+                print(f"You can find a back up file with same file name with date-stamp as suffix")  # Debugging print statement
+                print(f"You can find a back up file with same file name with date-stamp as suffix")  # Debugging print statement
+                #if not color_dropdown.value:  # Assuming the dropdown value is None when not selected.
+                # Extract the file extension
+                selected_file_name = os.path.basename(select_file_path)
+                file_extension = os.path.splitext(select_file_path)[1].lower()
+                
+                # Get the ontology to add: either the selected one or directly from input
+                if results_key:  # if an ontology was selected from the dropdown
+                    ontology_to_add = results_key  # use the @ID
+                else:
+                    ontology_to_add = ontology_input.value  # directly use the input value
+
+
+            
+                # Determine which function to call based on file format
+                if file_extension == ".fasta":
+                    add_ontology_to_fasta(select_file_path, "no", ontology_to_add , None)
+                elif file_extension == ".sam":
+                    add_ontology_to_sam(select_file_path, "no", ontology_to_add , None)
+                elif file_extension == ".gff3":
+                    add_ontology_to_gff3(select_file_path, "no", ontology_to_add , None)
+                elif file_extension == ".vcf":
+                    add_ontology_to_vcf(select_file_path, "no", ontology_to_add , None)
+                else:
+                    print(f"Unsupported file format: {file_extension}")
+
+                # If you processed with search_terms_in_ontology and have a temp file:
+                if results_key:  # only if an ontology was selected
+                    ontology_selected_full_file(selected_file_name,temp_ontology_file)
+                    print(f"Ontology files added to the folder of: {select_file_path}")
+                    '''
+                    datestamp = datetime.datetime.now().strftime("%Y%m%d%H%M%S")
+                    #The root will be everything except the file extension, and ext will be the file extension.
+                    root, ext = os.path.splitext(temp_ontology_file )
+                    
+                    temp_file_name = "ontology." + selected_file_name + "." + datestamp+ext
+                    temp_file_path = os.path.join(os.path.dirname(select_file_path), temp_file_name)
+                    
+                    #original_temp_file_path = os.path.join(os.path.dirname(select_file_path), "temp_filename" + file_extension)
+                    os.rename(temp_ontology_file, temp_file_path)
+                    '''
+        
+        
     #Define the handler function of xml file:
     def add_ontology_to_xml(e):
         selected_file = select_file_path
-        # Compute XML filename
-        xml_file = selected_file.rsplit('.', 1)[0] + ".cerf"
-        print(xml_file)
-        # Backup the original XML file
-        backup_file(xml_file)
-        # Load the XML
-        tree = ET.parse(xml_file)
-        root = tree.getroot()
+        # Check if ontology_input is empty or None
+        if not ontology_input.value:
+            warning_label.value = "Please enter a value for ontology input."
+            warning_label.visible = True
+            warning_label.update()
+            return
+        else:
+            # Compute XML filename
+            xml_file = get_xml_path_from_selected_file(selected_file)
+            print(xml_file)
+            # Read the first line from the original file
+            with open(xml_file, 'r', encoding='utf-8') as xml_path:
+                first_line = xml_path.readline().strip()
+            print(first_line)
+            # Backup the original XML file
+            backup_file(xml_file)
+            # Load the XML
+            tree = ET.parse(xml_file)
+            root = tree.getroot()
 
-        # Check if Ontologies node exists
-        ontologies_node = root.find("Ontologies")
-        if not ontologies_node:
-            # If not, create one
-            ontologies_node = ET.SubElement(root, "Ontologies")
+            # Check if Ontologies node exists
+            ontologies_node = root.find("Ontologies")
+            if not ontologies_node:
+                # If not, create one
+                ontologies_node = ET.SubElement(root, "Ontologies")
 
-        # Get ontology to add from the input or dropdown
-        ontology_to_add = ontology_input.value if not ontology_dropdown.value else ontology_dropdown.value
+            # Get ontology to add from the input or dropdown
+            ontology_to_add = ontology_input.value if not results_key else results_key
 
-        # Check if ontology exists within Ontologies node
-        if ontology_to_add not in [child.text for child in ontologies_node]:
-            # If not, add it
-            ontology_node = ET.SubElement(ontologies_node, "Ontology")
-            ontology_node.text = ontology_to_add
+            # Check if ontology exists within Ontologies node
+            if ontology_to_add not in [child.text for child in ontologies_node]:
+                # If not, add it
+                ontology_node = ET.SubElement(ontologies_node, "Ontology")
+                ontology_node.text = ontology_to_add
 
-        # Save the updated XML
-        tree.write(xml_file)
-    # If you processed with search_terms_in_ontology and have a temp file:
-    if results_key:  # only if an ontology was selected
-        ontology_selected_full_file(temp_ontology_file,temp_ontology_file)
+            # Save the updated XML
+            # Write back the XML to file
+            with open(xml_file, 'w', encoding='utf-8') as updated_xml_file:
+                # Write the original first line
+                updated_xml_file.write(first_line + '\n')
+                tree.write(updated_xml_file, encoding='unicode', xml_declaration=False)# We've manually included the first line, so xml_declaration is set to False.
+                print(f"Ontology added to XML at: {updated_xml_file}")
+            # If you processed with search_terms_in_ontology and have a temp file:
+            if results_key:  # only if an ontology was selected
+                ontology_selected_full_file(select_file_path,temp_ontology_file)
+                print(f"Ontology files added to the folder of: {select_file_path}")
+            
+
+
 
     #dropdown menu > we can maybe add Ontology options
     def dropdown_button_clicked(e):
@@ -307,7 +332,7 @@ def main(page: ft.page):
     openBioPortalBtn = ft.ElevatedButton(text='Open BioPortal', on_click=open_bioportal)
     addOntologyToFileBtn = ft.ElevatedButton(text='Add Ontology to file', on_click=add_ontoloty_to_file)
     #Add the button:
-    add_ontology_to_xml_btn = ft.Button("Add ontology to XML", on_click=add_ontology_to_xml)
+    add_ontology_to_xml_btn = ft.ElevatedButton("Add ontology to XML", on_click=add_ontology_to_xml)
 
     #Create a bos for the search button and text
     search_box = ft.Container(width=500, height=50, bgcolor="EAEAEA")

@@ -1,0 +1,15 @@
+To Log In to CERF:
+
+A.  Select a server from the drop-down Server list on the Log In dialog. A green icon shows that the server is up and running.  If the server is down (red icon), check with your System Administrator. Next, enter your Username and Password and click "Log In."
+
+B.  If no servers are shown on the drop-down list, you will need to add a server:
+
+1. Click the "Edit Servers" button on the Log In dialog.
+2. Click the "New Server" button on the Edit Servers dialog.
+3. Enter the Server Name (this can be any name).
+4. Enter the Server Address and Server Port.
+5. Click the "Test Connection" button to make sure that the server is connected (see your System Administrator if the server is not running).
+6. Click "OK."
+7. Follow the Log In directions above (A). 
+abc
+

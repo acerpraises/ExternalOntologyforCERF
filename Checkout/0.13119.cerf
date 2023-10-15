@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Resource title="sample.gff3">
+<Server name="CERF Demo 5.2.4" url="https://amazon-cerf-eln.info:443"/>
+<Folder path="0.13119"/>
+<MainDocument iconId="340" path="0.13119/cerf.13119.gff3" resourceId="13119" size="23865" serverFileName="cerf.13119.gff3" checkoutId="332" version="2" parentId="11553" md5="4Tw8ivTfpGHISIB493WXTQ=="/></Resource>

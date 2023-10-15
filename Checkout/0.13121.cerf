@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Resource title="seq.fasta">
+<Server name="CERF Demo 5.2.4" url="https://amazon-cerf-eln.info:443"/>
+<Folder path="0.13121"/>
+<MainDocument iconId="341" path="0.13121/cerf.13121.fasta" resourceId="13121" size="2538" serverFileName="cerf.13121.fasta" checkoutId="330" version="2" parentId="11553" md5="JEhkhwOJ/F6qKbAN4Z9BCw=="/></Resource>

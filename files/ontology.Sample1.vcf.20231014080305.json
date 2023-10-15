@@ -1,0 +1,44 @@
+{
+    "prefLabel": "Sweat",
+    "definition": [
+        "Concept: Sweat \nCUI: C0038984 \nSemantic Type:  Body Substance \n\nDefinition: \nThe fluid excreted by the SWEAT GLANDS. It consists of water containing sodium chloride, phosphate, urea, ammonia, and other waste products. (MeSH)"
+    ],
+    "obsolete": false,
+    "matchType": "prefLabel",
+    "ontologyType": "ONTOLOGY",
+    "provisional": false,
+    "@id": "http://www.owl-ontologies.com/assert.owl#Sweat",
+    "@type": "http://www.w3.org/2002/07/owl#Class",
+    "links": {
+        "self": "https://data.bioontology.org/ontologies/ONTOKBCF/classes/http%3A%2F%2Fwww.owl-ontologies.com%2Fassert.owl%23Sweat",
+        "ontology": "https://data.bioontology.org/ontologies/ONTOKBCF",
+        "children": "https://data.bioontology.org/ontologies/ONTOKBCF/classes/http%3A%2F%2Fwww.owl-ontologies.com%2Fassert.owl%23Sweat/children",
+        "parents": "https://data.bioontology.org/ontologies/ONTOKBCF/classes/http%3A%2F%2Fwww.owl-ontologies.com%2Fassert.owl%23Sweat/parents",
+        "descendants": "https://data.bioontology.org/ontologies/ONTOKBCF/classes/http%3A%2F%2Fwww.owl-ontologies.com%2Fassert.owl%23Sweat/descendants",
+        "ancestors": "https://data.bioontology.org/ontologies/ONTOKBCF/classes/http%3A%2F%2Fwww.owl-ontologies.com%2Fassert.owl%23Sweat/ancestors",
+        "instances": "https://data.bioontology.org/ontologies/ONTOKBCF/classes/http%3A%2F%2Fwww.owl-ontologies.com%2Fassert.owl%23Sweat/instances",
+        "tree": "https://data.bioontology.org/ontologies/ONTOKBCF/classes/http%3A%2F%2Fwww.owl-ontologies.com%2Fassert.owl%23Sweat/tree",
+        "notes": "https://data.bioontology.org/ontologies/ONTOKBCF/classes/http%3A%2F%2Fwww.owl-ontologies.com%2Fassert.owl%23Sweat/notes",
+        "mappings": "https://data.bioontology.org/ontologies/ONTOKBCF/classes/http%3A%2F%2Fwww.owl-ontologies.com%2Fassert.owl%23Sweat/mappings",
+        "ui": "http://bioportal.bioontology.org/ontologies/ONTOKBCF?p=classes&conceptid=http%3A%2F%2Fwww.owl-ontologies.com%2Fassert.owl%23Sweat",
+        "@context": {
+            "self": "http://www.w3.org/2002/07/owl#Class",
+            "ontology": "http://data.bioontology.org/metadata/Ontology",
+            "children": "http://www.w3.org/2002/07/owl#Class",
+            "parents": "http://www.w3.org/2002/07/owl#Class",
+            "descendants": "http://www.w3.org/2002/07/owl#Class",
+            "ancestors": "http://www.w3.org/2002/07/owl#Class",
+            "instances": "http://data.bioontology.org/metadata/Instance",
+            "tree": "http://www.w3.org/2002/07/owl#Class",
+            "notes": "http://data.bioontology.org/metadata/Note",
+            "mappings": "http://data.bioontology.org/metadata/Mapping",
+            "ui": "http://www.w3.org/2002/07/owl#Class"
+        }
+    },
+    "@context": {
+        "@vocab": "http://data.bioontology.org/metadata/",
+        "prefLabel": "http://data.bioontology.org/metadata/skosprefLabel",
+        "definition": "http://data.bioontology.org/metadata/skosdefinition",
+        "obsolete": "http://data.bioontology.org/metadata/owlobsolete"
+    }
+}

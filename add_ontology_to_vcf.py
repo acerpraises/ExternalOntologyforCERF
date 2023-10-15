@@ -81,15 +81,27 @@ def add_ontology_to_vcf(input_file, user_choice, overall_ontology, attribute_ont
     # Initialize the flag
     all_sequences_unmodified = True
 
+    
     ontology_header = f'##INFO=<ID=OT,Number=.,Type=String,Description="Ontology term associated with the variant">'
     header_added = False
     
     with open(input_file, 'r') as fin, open(temp_file, 'w') as fout:
         attribute_ontology_exist=False
-
+        fileformat_flag=False
+        INFO_flag=False
+        Metadata_line_end=False
+        
         previous_inputs = {}  # Dictionary to remember ontology for each read_id
         
         for line in fin:
+            if (re.match(r'^##[A-Z]+', line)) and Metadata_line_end==False and attribute_ontology_exist==False:
+                if attribute_ontology_exist==False and user_choice == 'no':
+                    #add a meta-data line for the overall ontology
+                    add_line = "##ontology="+overall_ontology+"\n"
+                    change_record['Changes description']+=f"over all unique change: {overall_ontology}."
+                    fout.write(add_line)
+                    attribute_ontology_exist==True
+                Metadata_line_end=True
             # Check if the line starts with ##ontology=
             if line.startswith("##ontology="):
                 # Check if the provided attribute_ontology already exists in the line
@@ -97,12 +109,16 @@ def add_ontology_to_vcf(input_file, user_choice, overall_ontology, attribute_ont
                     fout.write(line)
                     # add a new meta-data line and provide attribute_ontology to it
                     if user_choice == 'no':
-                        add_line = "##ontology" + "_" + current_time + "="+overall_ontology+"\n"
+                        add_line = "##ontology" + "="+overall_ontology+"\n"
+                        
                         change_record['Changes description']+=f"over all unique change: {overall_ontology}."
+
                         fout.write(add_line)
                 ##attribute_ontology_added = True
                 attribute_ontology_exist=True
-                
+                continue
+            
+            
             if line.startswith("##INFO"):
                 # Check if our custom ontology header already exists.
                 if ontology_header in line:
@@ -115,15 +131,12 @@ def add_ontology_to_vcf(input_file, user_choice, overall_ontology, attribute_ont
             
             # If our custom ontology header is not in the file, add it.
             if line.startswith("#CHROM"):
-                if attribute_ontology_exist==False and user_choice == 'no':
-                    #add a meta-data line for the overall ontology
-                    add_line = "##ontology="+overall_ontology+"\n"
-                    change_record['Changes description']+=f"over all unique change: {overall_ontology}."
-                    fout.write(add_line)
-                    attribute_ontology_exist==True
+                
                 if not header_added:
                     fout.write(ontology_header + "\n")
                     header_added = True
+                fout.write(line)
+                continue
 
             # Write column header line directly to output
             if line.startswith("#CHROM"):
