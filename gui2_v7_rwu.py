@@ -274,7 +274,7 @@ def main(page: ft.page):
         results_dropdown.update()
 
     
-    submit_btn = ft.ElevatedButton(text="Submit", on_click=handle_submit)
+    submit_btn = ft.ElevatedButton(text="Search Terms", on_click=handle_submit)
     
     # Warning text box
     warning_text = ft.Text('', color='red')
@@ -286,48 +286,58 @@ def main(page: ft.page):
     results_container = ft.Container()
     print(dir(results_container))
     
-    update_button = ft.ElevatedButton(text="Search", on_click=update_dropdown_options)
+    update_button = ft.ElevatedButton(text="Filter", on_click=update_dropdown_options)
     output_text = ft.Text(color='black')
     #submit_btn = ft.ElevatedButton(text="Submit", on_click=dropdown_button_clicked)
     color_dropdown = ft.Dropdown(
-        width=400,
+        width=400, #PA maybe remove
         options=ontology_options,
         value="Select Ontology to search OR directly add your input to file"
     )
 
-    row_filepicker = ft.Row(vertical_alignment="center")
+    #row_filepicker = ft.Row(alignment=ft.MainAxisAlignment.NONE)
     global file_path
-    file_path = ft.Text('Select a file...', expand=1, color='black', no_wrap=True)
+    file_path = ft.Text('Select a file...', expand=1, color='black', no_wrap=False)
     
     filepicker = ft.FilePicker(on_result=return_file)
 
     browserBtn = ft.ElevatedButton(text='Select file...', on_click=select_file) 
     
-    row_filepicker.controls.append(browserBtn)
-    row_filepicker.controls.append(file_path)
+    #row_filepicker.controls.append(browserBtn)
+    #row_filepicker.controls.append(file_path)
+
+    filepickerRow = ft.Row(controls=[file_path, browserBtn],
+                           alignment=ft.MainAxisAlignment.NONE)
     
     page.title = 'Ontology for CERF'
-    page.window_width = 500
+    page.window_width = 600
     page.window_height = 900
     page.bgcolor = "WHITE"
     
     selectFileText = ft.Text(value= 'Select a file to add Ontology',
-                             width=500,
-                             height=50,
-                             color='WHITE',
-                             bgcolor="#1976D2", 
-                             weight='w400', 
-                            size=20)
+                             color='BLUE',
+                             size=15)
 
     ontologyBoxText = ft.Text(value='Select Ontology', 
-                              width=500,
-                              height=50,
-                              color="WHITE",
-                              bgcolor="#1976D2", 
-                              weight='w400', 
-                              size=20
+                              color="BLUE",
+                              size=15
                               )
     
+
+    filterontology = ft.Text(value='Filter Ontology Search (ie: Gene Ontology)', 
+                              color="BLUE",
+                              size=15
+                              )
+    
+    listontology = ft.Text(value='List of available Ontology', 
+                              color="BLUE",
+                              size=15
+                              )
+    
+    descriptionTerm = ft.Text(value='Description of the Ontology Term', 
+                              color="BLUE",
+                              size=15
+                              )
     
     openBioPortalBtn = ft.ElevatedButton(text='Open BioPortal', on_click=open_bioportal)
     addOntologyToFileBtn = ft.ElevatedButton(text='Add Ontology to file', on_click=add_ontoloty_to_file)
@@ -335,19 +345,49 @@ def main(page: ft.page):
     add_ontology_to_xml_btn = ft.ElevatedButton("Add ontology to XML", on_click=add_ontology_to_xml)
 
     #Create a bos for the search button and text
-    search_box = ft.Container(width=500, height=50, bgcolor="EAEAEA")
+    search_box = ft.Container(bgcolor="EAEAEA")
     search_button = ft.ElevatedButton(text='Search on BioPortal', on_click=open_bioportal)
     search_box.controls = [search_button]
     
 
     
 
-    entriesRow = ft.Row(controls=[row_filepicker],
-                      alignment=ft.MainAxisAlignment.SPACE_BETWEEN)
+    #entriesRow = ft.Row(controls=[row_filepicker],
+     #                 alignment=ft.MainAxisAlignment.SPACE_BETWEEN)
+
+    
+    searchRow = ft.Row(controls=[ontology_search_input, update_button],
+                       alignment=ft.MainAxisAlignment.NONE)
+
+    ontologylistRow = ft.Row(controls=[ontology_dropdown, submit_btn],
+                             alignment=ft.MainAxisAlignment.NONE)
+
 
     buttonRow = ft.Row(controls=[openBioPortalBtn,add_ontology_to_xml_btn,addOntologyToFileBtn],
-                       alignment=ft.MainAxisAlignment.SPACE_BETWEEN)
+                       alignment=ft.MainAxisAlignment.NONE)
     
-    page.add(warning_label, selectFileText,  entriesRow, ontologyBoxText, search_box, ontology_input, ontology_search_input, update_button, ontology_dropdown, submit_btn, warning_text, results_dropdown, description_text, results_container, output_text, buttonRow)
+    page.add(warning_label, 
+             selectFileText,
+             filepickerRow,  
+             #entriesRow, 
+             #row_filepicker,
+             ontologyBoxText, 
+             search_box, 
+             ontology_input,
+             filterontology,
+             #ontology_search_input, 
+             #update_button,
+             searchRow,
+             listontology,
+             #ontology_dropdown, 
+             #submit_btn,
+             ontologylistRow, 
+             warning_text, 
+             results_dropdown, 
+             descriptionTerm,
+             description_text, 
+             results_container, 
+             output_text, 
+             buttonRow)
 
 ft.app(target=main)
