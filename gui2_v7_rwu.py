@@ -161,7 +161,7 @@ def main(page: ft.page):
         page.update()
 
     #To add a box that lets you input text
-    ontology_input = ft.TextField(label="Please input your ontology or search term:", width=400)
+    ontology_input = ft.TextField(label="Input search term for ontology term", width=400)
 
     # Store the ontologies in a dictionary
     ontology_dict = fetch_ontologies()
@@ -171,7 +171,7 @@ def main(page: ft.page):
 
     #Dropdown button
     # have a text input where the user will type:
-    ontology_search_input = ft.TextField(label="Search for Ontology:", width=400)
+    ontology_search_input = ft.TextField(label="Input search term for ontology", width=400)
     #Have a dropdown, initially empty or filled with all possible options:
     ontology_dict = fetch_ontologies()
     all_options = [ft.dropdown.Option(name) for name in ontology_dict.keys()]
@@ -314,7 +314,7 @@ def main(page: ft.page):
     page.window_height = 900
     page.bgcolor = "WHITE"
     
-    selectFileText = ft.Text(value= 'Select a file to add Ontology',
+    selectFileText = ft.Text(value= 'Select a file to add an ontology',
                              color='BLUE',
                              size=15)
 
@@ -329,18 +329,18 @@ def main(page: ft.page):
                               size=15
                               )
     
-    listontology = ft.Text(value='List of available Ontology', 
+    listontology = ft.Text(value='List of available ontologies', 
                               color="BLUE",
                               size=15
                               )
     
-    descriptionTerm = ft.Text(value='Description of the Ontology Term', 
+    descriptionTerm = ft.Text(value='Description of the ontology Term', 
                               color="BLUE",
                               size=15
                               )
     
     openBioPortalBtn = ft.ElevatedButton(text='Open BioPortal', on_click=open_bioportal)
-    addOntologyToFileBtn = ft.ElevatedButton(text='Add Ontology to file', on_click=add_ontoloty_to_file)
+    addOntologyToFileBtn = ft.ElevatedButton(text='Add ontology to file', on_click=add_ontoloty_to_file)
     #Add the button:
     add_ontology_to_xml_btn = ft.ElevatedButton("Add ontology to XML", on_click=add_ontology_to_xml)
 
