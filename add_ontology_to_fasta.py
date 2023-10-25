@@ -2,8 +2,8 @@
 #run following code in bash:
 #pip install biopython
 from record_change import record_changes_to_csv
-from get_ontology import get_ontology
-from get_ontology_choice import get_ontology_choice
+#from get_ontology import get_ontology
+#from get_ontology_choice import get_ontology_choice
 from Bio import SeqIO
 import datetime
 import os
@@ -47,7 +47,8 @@ def add_ontology_to_fasta(input_file, user_choice, overall_ontology, attribute_o
     with open(input_file, 'r') as infile:
         for record in SeqIO.parse(infile, 'fasta'):
             if user_choice == 'yes':
-                ontology_term = get_ontology(record.id, overall_ontology=overall_ontology)
+                print("Add different ontology to each read is still in development")
+                #ontology_term = get_ontology(record.id, overall_ontology=overall_ontology)
             else:
                 ontology_term = overall_ontology
             # Check if ontology information already exists
@@ -90,10 +91,10 @@ def add_ontology_to_fasta(input_file, user_choice, overall_ontology, attribute_o
     
 
 
-if __name__ == "__main__":
-    # Get input from the user
-    input_path = input("Please enter the path and name of the input FASTA file: ")
+#if __name__ == "__main__":
+#    # Get input from the user
+#    input_path = input("Please enter the path and name of the input FASTA file: ")
     
     # Add ontology to the input file and save backup
-    add_ontology_to_fasta(input_path)
-    print(f"File modified and a backup has been saved with a date-time suffix.")
+#    add_ontology_to_fasta(input_path)
+#    print(f"File modified and a backup has been saved with a date-time suffix.")

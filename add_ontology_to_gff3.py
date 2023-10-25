@@ -1,6 +1,6 @@
 
 from record_change import record_changes_to_csv
-from get_ontology import get_ontology
+#from get_ontology import get_ontology
 from Bio import SeqIO
 import datetime
 import os
@@ -98,9 +98,9 @@ def add_ontology_to_gff3(input_file, user_choice, overall_ontology, attribute_on
             
             if user_choice == 'yes':
                 # Here, you'd call the get_ontology() function, something like:
-                # ontology_term = get_ontology(read_id)  
+                print("Add different ontology to each read is still in development") 
                 # But for the sake of this example, I'm using a mock value
-                ontology_term = get_ontology(attributes_fields[0],previous_inputs)
+                # ontology_term = get_ontology(attributes_fields[0],previous_inputs)
                 if read_id not in previous_inputs:
                     previous_inputs[read_id] = ontology_term
 

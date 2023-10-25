@@ -5,8 +5,8 @@ import os
 import re
 
 from record_change import record_changes_to_csv
-from get_ontology import get_ontology
-from get_ontology_choice import get_ontology_choice
+#from get_ontology import get_ontology
+#from get_ontology_choice import get_ontology_choice
 
 def modify_header(header, ontology_term_to_add):
     # If ontology term not exist in header, add it
@@ -118,7 +118,8 @@ def add_ontology_to_sam(input_file, user_choice, overall_ontology, attribute_ont
                 fields = line.strip().split('\t')
                 read_name = fields[0]
                 if user_choice=='yes':
-                    ontology_term_to_add=get_ontology(read_name, overall_ontology=overall_ontology)
+                    #ontology_term_to_add=get_ontology(read_name, overall_ontology=overall_ontology)
+                    print("Add different ontology to each read is still in development")
                 else:
                     ontology_term_to_add=overall_ontology
                 '''    
@@ -168,10 +169,10 @@ def add_ontology_to_sam(input_file, user_choice, overall_ontology, attribute_ont
         change_record['Changes description'] = 'All sequences NOT changed due to Ontology existing.'
     '''
 # Example usage
-if __name__ == "__main__":
+#if __name__ == "__main__":
     # Get input from the user
-    input_path = input("Please enter the path and name of the input FASTA file: ")
+#    input_path = input("Please enter the path and name of the input FASTA file: ")
     
     # Add ontology to the input file and save backup
-    add_ontology_to_sam(input_path, get_ontology)
-    print(f"File modified and a backup has been saved with a date-time suffix.")
+#    add_ontology_to_sam(input_path, get_ontology)
+#    print(f"File modified and a backup has been saved with a date-time suffix.")

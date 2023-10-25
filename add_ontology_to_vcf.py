@@ -1,11 +1,11 @@
 
 from record_change import record_changes_to_csv
-from get_ontology import get_ontology
+#from get_ontology import get_ontology
 from Bio import SeqIO
 import datetime
 import os
 import re
-
+'''
 def get_ontology_choice():
     # Determine if user wants a unique ontology for each sequence or a single overall ontology
     user_choice = ""
@@ -21,7 +21,7 @@ def get_ontology_choice():
     attribute_ontology = input("Please provide the URL for the ontology_term added to the attribute (leave empty if none): ")
 
     return user_choice, overall_ontology, attribute_ontology
-
+'''
 
 def choose_info_id(vcf_file, default_id="OT"):
     """
@@ -154,7 +154,7 @@ def add_ontology_to_vcf(input_file, user_choice, overall_ontology, attribute_ont
                 # Here, you'd call the get_ontology() function, something like:
                 # ontology_term = get_ontology(read_id)  
                 # But for the sake of this example, I'm using a mock value
-                ontology_term = get_ontology(read_id,previous_inputs=previous_inputs)
+                #ontology_term = get_ontology(read_id,previous_inputs=previous_inputs)
                 if read_id not in previous_inputs:
                     previous_inputs[read_id] = ontology_term
             
