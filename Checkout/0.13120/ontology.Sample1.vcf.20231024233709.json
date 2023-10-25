@@ -1,0 +1,40 @@
+{
+    "prefLabel": "Atrioventricular septal defect",
+    "obsolete": false,
+    "matchType": "prefLabel",
+    "ontologyType": "ONTOLOGY",
+    "provisional": false,
+    "@id": "http://homes.esat.kuleuven.be/~bioiuser/chdwiki/index.php/CHDEPCC:060600",
+    "@type": "http://www.w3.org/2002/07/owl#Class",
+    "links": {
+        "self": "https://data.bioontology.org/ontologies/CHD/classes/http%3A%2F%2Fhomes.esat.kuleuven.be%2F~bioiuser%2Fchdwiki%2Findex.php%2FCHDEPCC%3A060600",
+        "ontology": "https://data.bioontology.org/ontologies/CHD",
+        "children": "https://data.bioontology.org/ontologies/CHD/classes/http%3A%2F%2Fhomes.esat.kuleuven.be%2F~bioiuser%2Fchdwiki%2Findex.php%2FCHDEPCC%3A060600/children",
+        "parents": "https://data.bioontology.org/ontologies/CHD/classes/http%3A%2F%2Fhomes.esat.kuleuven.be%2F~bioiuser%2Fchdwiki%2Findex.php%2FCHDEPCC%3A060600/parents",
+        "descendants": "https://data.bioontology.org/ontologies/CHD/classes/http%3A%2F%2Fhomes.esat.kuleuven.be%2F~bioiuser%2Fchdwiki%2Findex.php%2FCHDEPCC%3A060600/descendants",
+        "ancestors": "https://data.bioontology.org/ontologies/CHD/classes/http%3A%2F%2Fhomes.esat.kuleuven.be%2F~bioiuser%2Fchdwiki%2Findex.php%2FCHDEPCC%3A060600/ancestors",
+        "instances": "https://data.bioontology.org/ontologies/CHD/classes/http%3A%2F%2Fhomes.esat.kuleuven.be%2F~bioiuser%2Fchdwiki%2Findex.php%2FCHDEPCC%3A060600/instances",
+        "tree": "https://data.bioontology.org/ontologies/CHD/classes/http%3A%2F%2Fhomes.esat.kuleuven.be%2F~bioiuser%2Fchdwiki%2Findex.php%2FCHDEPCC%3A060600/tree",
+        "notes": "https://data.bioontology.org/ontologies/CHD/classes/http%3A%2F%2Fhomes.esat.kuleuven.be%2F~bioiuser%2Fchdwiki%2Findex.php%2FCHDEPCC%3A060600/notes",
+        "mappings": "https://data.bioontology.org/ontologies/CHD/classes/http%3A%2F%2Fhomes.esat.kuleuven.be%2F~bioiuser%2Fchdwiki%2Findex.php%2FCHDEPCC%3A060600/mappings",
+        "ui": "http://bioportal.bioontology.org/ontologies/CHD?p=classes&conceptid=http%3A%2F%2Fhomes.esat.kuleuven.be%2F~bioiuser%2Fchdwiki%2Findex.php%2FCHDEPCC%3A060600",
+        "@context": {
+            "self": "http://www.w3.org/2002/07/owl#Class",
+            "ontology": "http://data.bioontology.org/metadata/Ontology",
+            "children": "http://www.w3.org/2002/07/owl#Class",
+            "parents": "http://www.w3.org/2002/07/owl#Class",
+            "descendants": "http://www.w3.org/2002/07/owl#Class",
+            "ancestors": "http://www.w3.org/2002/07/owl#Class",
+            "instances": "http://data.bioontology.org/metadata/Instance",
+            "tree": "http://www.w3.org/2002/07/owl#Class",
+            "notes": "http://data.bioontology.org/metadata/Note",
+            "mappings": "http://data.bioontology.org/metadata/Mapping",
+            "ui": "http://www.w3.org/2002/07/owl#Class"
+        }
+    },
+    "@context": {
+        "@vocab": "http://data.bioontology.org/metadata/",
+        "prefLabel": "http://data.bioontology.org/metadata/skosprefLabel",
+        "obsolete": "http://data.bioontology.org/metadata/owlobsolete"
+    }
+}

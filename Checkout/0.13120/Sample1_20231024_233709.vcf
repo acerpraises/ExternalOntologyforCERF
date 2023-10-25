@@ -2,9 +2,7 @@
 ##filedate=2010-07-18
 ##reference=NCBI36
 ##ontology=http://purl.bioontology.org/ontology/NCBITAXON/79923
-##ontology=http://homes.esat.kuleuven.be/~bioiuser/chdwiki/index.php/CHDEPCC:060600
 ##ontology=http://bmi.utah.edu/ontologies/hfontology/C0264856
-##ontology=http://homes.esat.kuleuven.be/~bioiuser/chdwiki/index.php/CHDEPCC:060600
 ##INFO=<ID=GC,Number=0,Type=Flag,Description="Overlap with Gencode CCDS coding sequence">
 ##INFO=<ID=DP,Number=1,Type=Integer,Description="Total number of reads in haplotype window">
 ##INFO=<ID=AF,Number=1,Type=Float,Description="Dindel estimated population allele frequency">

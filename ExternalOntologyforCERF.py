@@ -97,8 +97,9 @@ def main(page: ft.page):
 
                 # If you processed with search_terms_in_ontology and have a temp file:
                 if results_key:  # only if an ontology was selected
-                    ontology_selected_full_file(selected_file_name,temp_ontology_file)
-                    print(f"Ontology files added to the folder of: {select_file_path}")
+                    ontology_selected_full_file(select_file_path,temp_ontology_file)
+                    print(f"Ontology files added to for the file: {select_file_path}")
+                    print(f"Ontology files originated from the file: {temp_ontology_file}")
                     '''
                     datestamp = datetime.datetime.now().strftime("%Y%m%d%H%M%S")
                     #The root will be everything except the file extension, and ext will be the file extension.
