@@ -1,0 +1,49 @@
+{
+    "prefLabel": "nucleus accumbens development",
+    "synonym": [
+        "ventral striatum development",
+        "accumbens nucleus development"
+    ],
+    "definition": [
+        "The progression of the nucleus accumbens over time from its initial formation until its mature state. The nucleus accumbens is a collection of pleomorphic cells in the caudal part of the anterior horn of the lateral ventricle, in the region of the olfactory tubercle, lying between the head of the caudate nucleus and the anterior perforated substance. It is part of the ventral striatum, a composite structure considered part of the basal ganglia."
+    ],
+    "obsolete": false,
+    "matchType": "prefLabel",
+    "ontologyType": "ONTOLOGY",
+    "provisional": false,
+    "@id": "http://purl.obolibrary.org/obo/GO_0021768",
+    "@type": "http://www.w3.org/2002/07/owl#Class",
+    "links": {
+        "self": "https://data.bioontology.org/ontologies/GO/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FGO_0021768",
+        "ontology": "https://data.bioontology.org/ontologies/GO",
+        "children": "https://data.bioontology.org/ontologies/GO/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FGO_0021768/children",
+        "parents": "https://data.bioontology.org/ontologies/GO/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FGO_0021768/parents",
+        "descendants": "https://data.bioontology.org/ontologies/GO/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FGO_0021768/descendants",
+        "ancestors": "https://data.bioontology.org/ontologies/GO/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FGO_0021768/ancestors",
+        "instances": "https://data.bioontology.org/ontologies/GO/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FGO_0021768/instances",
+        "tree": "https://data.bioontology.org/ontologies/GO/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FGO_0021768/tree",
+        "notes": "https://data.bioontology.org/ontologies/GO/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FGO_0021768/notes",
+        "mappings": "https://data.bioontology.org/ontologies/GO/classes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FGO_0021768/mappings",
+        "ui": "http://bioportal.bioontology.org/ontologies/GO?p=classes&conceptid=http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FGO_0021768",
+        "@context": {
+            "self": "http://www.w3.org/2002/07/owl#Class",
+            "ontology": "http://data.bioontology.org/metadata/Ontology",
+            "children": "http://www.w3.org/2002/07/owl#Class",
+            "parents": "http://www.w3.org/2002/07/owl#Class",
+            "descendants": "http://www.w3.org/2002/07/owl#Class",
+            "ancestors": "http://www.w3.org/2002/07/owl#Class",
+            "instances": "http://data.bioontology.org/metadata/Instance",
+            "tree": "http://www.w3.org/2002/07/owl#Class",
+            "notes": "http://data.bioontology.org/metadata/Note",
+            "mappings": "http://data.bioontology.org/metadata/Mapping",
+            "ui": "http://www.w3.org/2002/07/owl#Class"
+        }
+    },
+    "@context": {
+        "@vocab": "http://data.bioontology.org/metadata/",
+        "prefLabel": "http://data.bioontology.org/metadata/skosprefLabel",
+        "synonym": "http://data.bioontology.org/metadata/skossynonym",
+        "definition": "http://data.bioontology.org/metadata/skosdefinition",
+        "obsolete": "http://data.bioontology.org/metadata/owlobsolete"
+    }
+}

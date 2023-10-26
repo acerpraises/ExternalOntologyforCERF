@@ -200,7 +200,7 @@ def main(page: ft.page):
     )
 
     # Dropdown to display search results
-    results_dropdown = ft.Dropdown(
+    results_dropdown = ft.Dropdown(label="Dropdown options for the ontology term selected",
         width=800,
         options=[]
     )
@@ -321,8 +321,8 @@ def main(page: ft.page):
                            alignment=ft.MainAxisAlignment.NONE)
     
     page.title = 'Ontology for CERF'
-    page.window_width = 600
-    page.window_height = 900
+    page.window_width = True
+    page.window_height = 1000
     page.bgcolor = "WHITE"
     
     selectFileText = ft.Text(value= 'Select a file to add Ontology',
